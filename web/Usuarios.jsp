@@ -20,7 +20,7 @@
                     </div>        
                     <div class="form-group">
                         <label>Id</label>
-                        <input type="text"  value="${usuario.getId()}" name="txtId" class="form-control"required>
+                        <input type="text"  value="${usuario.getId()}" name="txtId" class="form-control"required autofocus="autofocus">
                     </div>
                     <div class="form-group">
                         <label>Nombre</label>
@@ -40,7 +40,7 @@
                     </div>
                     <div class="form-group">
                         <label>Email</label>
-                        <input type="text" value="${usuario.getEmail()}"name="txtEmail" class="form-control"required>
+                        <input type="email" value="${usuario.getEmail()}"name="txtEmail" class="form-control" required>
                        
                     </div>
                     <input type="submit" name="accion" value="Agregar" class="btn btn-info">

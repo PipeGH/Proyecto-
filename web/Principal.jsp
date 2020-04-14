@@ -25,6 +25,7 @@
         
         if(request.getAttribute("usuario")==null){
         response.sendRedirect("index.jsp");
+        out.write("Contraseña incorrecta");
         }
         %>
         <nav class="navbar navbar-expand-lg navbar-light bg-info">
@@ -33,13 +34,13 @@
     <ul class="navbar-nav">
             <li class="nav-item active">
                 <a style="margin-left: 10px; border: none"class="btn btn-outline-light" href="Controlador?menu=Inicio" target="myFrame">Inicio
-                  <img src="img/inmueble.png" alt="20" width="20"/>
+                  <img src="img/home3.png" alt="20" width="20"/>
                 </a>
                 
             </li>
            <div class="dropdown">
                <Button style="margin-left: 10px; border: none" class="btn btn-outline-light dropdown-toggle"  type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Usuarios
-               <img src="img/logousuario.png" alt="20" width="20"/>
+               <img src="img/usuarios.png" alt="20" width="20"/>
                </button>
                 
                <div class="dropdown-menu text-center">
@@ -50,7 +51,7 @@
             </div>
            <div class="dropdown">
                <Button style="margin-left: 10px; border: none" class="btn btn-outline-light dropdown-toggle"  type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Invitados
-                   <img src="img/logousuario.png" alt="20" width="20"/>
+                   <img src="img/usuarios.png" alt="20" width="20"/>
                </button>
                 <div class="dropdown-menu text-center">
                   <a  style="margin-right: 10px; border: none" class="dropdown-item" href="Controlador?menu=ListarInvitados&accion=Listar">Listar Invitados</a>
@@ -61,7 +62,7 @@
            
             <li class="nav-item">
               <a style="margin-left: 10px; border: none" class="btn btn-outline-light" href="Controlador?menu=Inmuebles"target=>Inmuebles
-                <img src="img/inmueble.png" alt="20" width="20"/>
+                <img src="img/home3.png" alt="20" width="20"/>
               </a>
             
             </li>
@@ -79,8 +80,8 @@
                   <a class="dropdown-item" href="#">${usuario.getEmail()}</a>
                   <div class="dropdown-divider"></div>
                   <form action="Validar" method="POST">
-                      <Button name="accion" value="Salir" class="dropdown-item" href="#">Salir
-                         <img src="img/exit_1.png" alt="20" width="20"/>
+                      <Button name="accion" value="Salir" class="dropdown-item" href="">Salir
+                         <img src="img/salir.png" alt="20" width="20"/>
                       </Button>
                    
                   </form>

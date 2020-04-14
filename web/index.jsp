@@ -41,12 +41,13 @@ history.forward();
                         </div>
                         <div class="form-group">
                             <label>Usuario:</label>
-                            <input type="text" name="txtuser" class="form-control"required>
+                            <input type="text" name="txtuser" class="form-control"  placeholder="Nombre de Usuario"required autofocus>
                         </div>
                         <div class="form-group">
            
                             <label>Password:</label>
                             <input type="password" name="txtpass" class="form-control"required>
+                            
                         </div>
                         <input type="submit" name="accion" value="Ingresar" class="btn btn-primary btn-lg btn-block">
                         

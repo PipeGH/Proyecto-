@@ -19,7 +19,7 @@
                         </div> 
                     <div class="form-group">
                         <label>Id</label>
-                        <input type="text"  value="${invitado.getId()}" name="txtId" class="form-control"required>
+                        <input type="text"  value="${invitado.getId()}" name="txtId" class="form-control"required autofocus="autofocus">
                     </div>
                     <div class="form-group">
                         <label>Nombre</label>
