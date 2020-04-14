@@ -41,7 +41,7 @@ history.forward();
                         </div>
                         <div class="form-group">
                             <label>Usuario:</label>
-                            <input type="text" name="txtuser" class="form-control"  placeholder="Nombre de Usuario"required autofocus>
+                            <input type="text" name="txtuser" class="form-control"  placeholder="Nombre de Usuario"required autofocus="autofocus">
                         </div>
                         <div class="form-group">
            
