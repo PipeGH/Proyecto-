@@ -23,7 +23,6 @@
                         <th>Id</th>
                         <th>Nombre</th>
                         <th>Apellido</th>
-                        <th>Id_inmueble</th> 
                     </tr>
                 </thead>
            <tbody>
@@ -32,13 +31,10 @@
                          <td>${in.getId()}</td>
                          <td>${in.getNombre()}</td>
                          <td>${in.getApellido()}</td>
-                         <td>${in.getId_inmueble()}</td>
 
                        </tr>
             </c:forEach>        
-                    <td>
-                    <input type="submit" name="accion" value="Atras" class="btn btn-info">
-                    </td> 
+                    
            </tbody>
         </table>
             

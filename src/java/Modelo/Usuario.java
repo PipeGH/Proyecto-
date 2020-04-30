@@ -2,12 +2,12 @@ package Modelo;
 
 
 public class Usuario {
-      int    id;
+      int id;
     String nombre;
     String apellido;
-    String tipo;
     String telefono;
     String email;
+    int nivel=0;
     
     
     
@@ -15,15 +15,14 @@ public class Usuario {
           
     }
     
-    public Usuario(int id, String nombre, String apellido, String tipo, String telefono, String email){
+    public Usuario(int id, String nombre, String apellido, String telefono, String email, int nivel){
      
     this.id = id;
     this.nombre = nombre;
     this.apellido = apellido;
-    this.tipo= tipo;
     this.telefono= telefono;
     this.email= email;
-   
+    this.nivel= nivel;
     
     }
 
@@ -32,7 +31,7 @@ public class Usuario {
     }
 
     public void setId(int id) {
-        this.id = id;
+        this.id =id;
     }
 
     public String getNombre() {
@@ -51,14 +50,6 @@ public class Usuario {
         this.apellido = apellido;
     }
 
-    public String getTipo() {
-        return tipo;
-    }
-
-    public void setTipo(String tipo) {
-        this.tipo = tipo;
-    }
-
     public String getTelefono() {
         return telefono;
     }
@@ -73,6 +64,14 @@ public class Usuario {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public int getNivel() {
+        return nivel;
+    }
+
+    public void setNivel(int nivel) {
+        this.nivel = nivel;
     }
     
     

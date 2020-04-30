@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.lang.*;
 import static java.lang.System.out;
+import javax.servlet.http.HttpSession;
 
 public class Validar extends HttpServlet {
 
@@ -19,8 +20,7 @@ public class Validar extends HttpServlet {
    
    protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        response.setContentType("text/html;charset=UTF-8");
-        
+        response.setContentType("text/html;charset=UTF-8");   
     }
 
     @Override
@@ -37,27 +37,29 @@ public class Validar extends HttpServlet {
         String user=request.getParameter("txtuser");
         int pass=Integer.parseInt(request.getParameter("txtpass"));
         us=usao.Validar(user, pass);
-        if(us.getNombre()!=null){
+           
+        if(us!=null&&us.getNivel()==1){
            request.setAttribute("usuario",us);
-           request.getRequestDispatcher("Controlador?menu=Principal").forward(request, response);
-           request.getSession().invalidate();
+           request.getRequestDispatcher("Controlador?menu=Principal&menu=Inicio").forward(request, response);
+           
+        }else if(us!=null&&us.getNivel()==2){
+           request.setAttribute("usuario",us);
+           request.getRequestDispatcher("Empleado.jsp").forward(request, response);
            
         }else{
             request.setAttribute("usuario", null);
-            request.getRequestDispatcher("index.jsp").forward(request, response);
+            response.sendRedirect("index.jsp");
             
             }
+        
         }
-        if(accion.equalsIgnoreCase("Atras")){
+        if(accion.equalsIgnoreCase("Salir")){
          request.setAttribute("usuario",us);
-         request.getRequestDispatcher("Controlador?menu=Principal").forward(request, response);
+         request.getRequestDispatcher("index.jsp").forward(request, response);
          request.getSession().equals(us);
         }
-        else{
-          request.setAttribute("usuario", null); 
-         response.sendRedirect("index.jsp");
-         out.print("Error");
-        }
+          
+     
     }
 
     @Override

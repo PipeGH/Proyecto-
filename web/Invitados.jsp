@@ -29,10 +29,6 @@
                         <label>Apellido</label>
                         <input type="text"  value="${invitado.getApellido()}"name="txtApellido" class="form-control"required>
                     </div>
-                    <div class="form-group">
-                        <label>Inmueble</label>
-                        <input type="text" value="${invitado.getId_inmueble()}"name="txtInmueble" class="form-control"required>
-                    </div>
                     
                     <input type="submit" name="accion" value="Agregar" class="btn btn-info">
                     <input type="submit" name="accion" value="Actualizar" class="btn btn-success">
@@ -48,7 +44,6 @@
                         <th>Id</th>
                         <th>Nombre</th>
                         <th>Apellido</th>
-                        <th>Id_inmueble</th> 
                         <th>Accion</th> 
                     </tr>
                 </thead>
@@ -58,7 +53,6 @@
                          <td>${in.getId()}</td>
                          <td>${in.getNombre()}</td>
                          <td>${in.getApellido()}</td>
-                         <td>${in.getId_inmueble()}</td>
 
                          
                          <td>
@@ -69,11 +63,7 @@
             </c:forEach>        
            </tbody>
         </table>
-             <form action="Validar" method="POST">
-               <div class="form-group"> 
-                     <input type="submit" name="accion" value="Atras" class="btn btn-info">
-                    </div>        
-           </form> 
+             
           </div>      
         </div>
    

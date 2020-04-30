@@ -1,0 +1,36 @@
+body{
+    
+    background:url(../img/fondom.jpg)no-repeat center center fixed;
+    background-size: cover;
+}
+    
+.main-section{
+    
+    margin: 0 auto;
+    margin-top: 35%;
+    padding: 0;
+}
+    .user-img img{
+   
+        margin-top: -45px;
+        margin-bottom: 35px; 
+        
+    }
+    .user-img img{
+         width:  150px;
+         height: 130px;
+        
+         
+    }
+    .modal-content{
+        background-color:#666666;
+        opacity: .95;
+        box-shadow: 0px 0px 0px #848484; 
+        
+    }
+    .form-group{
+        color: #ffffff;
+    }
+    
+
+

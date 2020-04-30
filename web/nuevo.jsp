@@ -2,7 +2,17 @@
 <html>
 <head>
     <link rel="stylesheet" href="css/estilo.css" type="text/css">
-    
+     <style>
+            
+            body{background-image:  url(img/LoginFondo.jpg)}
+            
+            body{background-position: right}
+            body{-webkit-background-size: cover;}
+            body{-moz-background-size:cover;}
+            body{-o-background-size: cover;}
+            body{background-repeat: no-repeat;}
+          
+        </style>
         <script src="http://code.jquery.com/jquery-latest.js"></script>
         <script src="arriba.js"></script>
 </head>

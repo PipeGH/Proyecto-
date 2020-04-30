@@ -20,9 +20,9 @@
                         <th>Id</th>
                         <th>Nombre</th>
                         <th>Apellido</th>
-                        <th>Tipo</th>
                         <th>Telefono</th>
-                        <th>Email</th> 
+                        <th>Email</th>
+                        <th>Nivel</th>
                     </tr>
                 </thead>
            <tbody>
@@ -31,15 +31,13 @@
                          <td>${us.getId()}</td>
                          <td>${us.getNombre()}</td>
                          <td>${us.getApellido()}</td>
-                         <td>${us.getTipo()}</td>
                          <td>${us.getTelefono()}</td>
                          <td>${us.getEmail()}</td>
+                         <td>${us.getNivel()}</td>
                          
                 </tr>
             </c:forEach>        
-                    <td>
-                    <input type="submit" name="accion" value="Atras" class="btn btn-info">
-                    </td>               
+                                 
            </tbody>
            </table>
             

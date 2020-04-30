@@ -33,18 +33,7 @@
                 </a>
                 
             </li>
-           <div class="dropdown">
-               <Button style="margin-left: 10px; border: none" class="btn btn-outline-light dropdown-toggle"  type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Usuarios
-               <img src="img/usuarios.png" alt="20" width="20"/>
-               </button>
-                
-               <div class="dropdown-menu text-center">
-                  <a  style="margin-right: 10px; border: none" class="dropdown-item" href="Controlador?menu=ListarUsuarios&accion=Listar"target="myFrame">Listar Usuarios</a>
-                  <a  style="margin-right: 10px; border: none" class="dropdown-item" href="Controlador?menu=Usuarios&accion=Listar"target="myFrame">Gestionar Usuarios</a>
-                   
-                  <div class="dropdown-divider"></div>
-                </div>   
-            </div>
+           
            <div class="dropdown">
                <Button style="margin-left: 10px; border: none" class="btn btn-outline-light dropdown-toggle"  type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Invitados
                    <img src="img/usuarios.png" alt="20" width="20"/>
@@ -57,17 +46,7 @@
                 </div>   
             </div>
            
-            <div class="dropdown">
-               <Button style="margin-left: 10px; border: none" class="btn btn-outline-light dropdown-toggle"  type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Inmuebles
-                   <img src="img/home3.png" alt="20" width="20"/>
-               </button>
-                <div class="dropdown-menu text-center">
-                  
-           <a  style="margin-right: 10px; border: none" class="dropdown-item" href="Controlador?menu=Inmuebles&accion=Listar"target="myFrame">Inmuebles</a>
                
-                  <div class="dropdown-divider"></div>
-                </div>   
-            </div>
     </ul>
       <div class="dropdown">
         <button style="border:none"class="btn btn-outline-light dropdown-toggle"  type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -82,19 +61,23 @@
                   <a class="dropdown-item" href="#">${usuario.getEmail()}</a>
                   <div class="dropdown-divider"></div>
                   <form action="Validar" method="POST">
-                      <Button name="accion" value="Salir" class="dropdown-item" href="#">Salir
+                      <Button name="accion" value="Salir" class="dropdown-item" href="">Salir
                          <img src="img/salir.png" alt="20" width="20"/>
                       </Button>
+                   
                   </form>
                 </div>
              </div>
           </div>
         </nav>                 
         <div class="mt-4" style="height: 570px;">
-            <iframe name="myFrame" style="height: 100%; width: 100%; border:none" href=""></iframe> 
+            <iframe name="myFrame" style="height: 100%; width: 100%; border:none" href="nuevo.jsp"></iframe> 
              
         </div> 
-           
+            <script lenguaje="JavaScript" type="text/javascript">
+                alert("Bienvenido al sistema");
+            </script>
+            
      
 <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" ="crossoriginanonymous"></script>
@@ -103,3 +86,4 @@
      </body>
     
 </html>
+

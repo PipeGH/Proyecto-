@@ -31,24 +31,26 @@
                         <input type="text"  value="${usuario.getApellido()}"name="txtApellido" class="form-control"required>
                     </div>
                     <div class="form-group">
-                        <label>Tipo</label>
-                        <input type="text" value="${usuario.getTipo()}"name="txtTipo" class="form-control"required>
-                    </div>
-                    <div class="form-group">
                         <label>Telefono</label>
                         <input type="text" value="${usuario.getTelefono()}"name="txtTelefono" class="form-control"required>
                     </div>
                     <div class="form-group">
                         <label>Email</label>
                         <input type="email" value="${usuario.getEmail()}"name="txtEmail" class="form-control" required>
-                       
                     </div>
-                    <input type="submit" name="accion" value="Agregar" class="btn btn-info">
-                    <input type="submit" name="accion" value="Actualizar" class="btn btn-success">
-                    <input type="reset" name="accion" value="Cancelar" class="btn btn-info">
+                        <div class="form-group">
+                        <label>Nivel</label>
+                        <input type="text" value="${usuario.getNivel()}"name="txtNivel" class="form-control" required>
                     
-                         
+                        
+                        </div>
+                
+                    <input type="submit" name="accion" value="Agregar" class="btn btn-primary">
+                    <input type="submit" name="accion" value="Actualizar" class="btn btn-success">
+                    <input style="margin-left: 5px;"type="reset" name="accion" value="Cancelar" class="btn btn-info">
+                    
                  </form>
+            
             </div> 
         </div>
         <div class="col-sm-9">
@@ -58,9 +60,9 @@
                         <th>Id</th>
                         <th>Nombre</th>
                         <th>Apellido</th>
-                        <th>Tipo</th>
                         <th>Telefono</th>
                         <th>Email</th> 
+                        <th>Nivel</th> 
                         <th>Accion</th> 
                     </tr>
                 </thead>
@@ -70,15 +72,16 @@
                          <td>${us.getId()}</td>
                          <td>${us.getNombre()}</td>
                          <td>${us.getApellido()}</td>
-                         <td>${us.getTipo()}</td>
                          <td>${us.getTelefono()}</td>
                          <td>${us.getEmail()}</td>
+                         <td>${us.getNivel()}</td>
                          
-                         <td>
+                <td>
                              <a class="btn btn-warning"href="Controlador?menu=Usuarios&accion=Editar&id=${us.getId()}">Editar</a>
                              <a class="btn btn-danger"href="Controlador?menu=Usuarios&accion=Eliminar&id=${us.getId()}">Eliminar</a> 
-                         </td>
-                       </tr>
+                         
+                </td>
+                </tr>
                          
                        
             </c:forEach>
@@ -86,11 +89,7 @@
                         
            </tbody>
         </table>
-            <form action="Validar" method="POST">
-               <div class="form-group"> 
-                     <input type="submit" name="accion" value="Atras" class="btn btn-info">
-                    </div>        
-           </form>    
+               
           </div>      
         </div>
    

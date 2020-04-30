@@ -1,9 +1,6 @@
 package Controlador;
 
-import Modelo.Invitado;
-import Modelo.InvitadoDAO;
-import Modelo.Usuario;
-import Modelo.UsuarioDAO;
+import Modelo.*;
 import java.io.IOException;
 import java.io.PrintWriter;
 import static java.lang.System.out;
@@ -19,7 +16,10 @@ public class Controlador extends HttpServlet {
     UsuarioDAO usao=new UsuarioDAO();
     Invitado in=new Invitado();
     InvitadoDAO indao=new InvitadoDAO();
+    Inmueble inmueb= new Inmueble();
+    InmuebleDAO inmdao=new InmuebleDAO();
     int ide;
+    String ide2;
   
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -29,6 +29,11 @@ public class Controlador extends HttpServlet {
         if(menu.equals("Principal")){
             
          request.getRequestDispatcher("Principal.jsp").forward(request, response);
+         
+        }
+        if(menu.equals("Empleado")){
+            
+         request.getRequestDispatcher("Empleado.jsp").forward(request, response);
          
         }
         
@@ -51,12 +56,7 @@ public class Controlador extends HttpServlet {
         
          request.getRequestDispatcher("ListaUsuarios.jsp").forward(request, response);
         }
-        if(accion.equals("Atras")){
-        
-            
-              request.getRequestDispatcher("Principal.jsp").forward(request, response);
-               
-        }
+       
          
         if(menu.equals("Usuarios")){
          
@@ -69,15 +69,15 @@ public class Controlador extends HttpServlet {
                     int id=Integer.parseInt(request.getParameter("txtId"));
                     String nombre=request.getParameter("txtNombre");
                     String apellido=request.getParameter("txtApellido");
-                    String tipo=request.getParameter("txtTipo");
                     String telefono=request.getParameter("txtTelefono");
                     String email=request.getParameter("txtEmail");
+                    int nivel=Integer.parseInt(request.getParameter("txtNivel"));
                     us.setId(id);
                     us.setNombre(nombre);
                     us.setApellido(apellido);
-                    us.setTipo(tipo);
                     us.setTelefono(telefono);
                     us.setEmail(email);
+                    us.setNivel(nivel);
                     usao.agregar(us);
                     request.getRequestDispatcher("Controlador?menu=Usuarios&accion=Listar").forward(request, response);
                    break;
@@ -92,15 +92,15 @@ public class Controlador extends HttpServlet {
                    int id1=Integer.parseInt(request.getParameter("txtId"));
                     String nombre1=request.getParameter("txtNombre");
                     String apellido1=request.getParameter("txtApellido");
-                    String tipo1=request.getParameter("txtTipo");
                     String telefono1=request.getParameter("txtTelefono");
                     String email1=request.getParameter("txtEmail");
+                    int nivel1=Integer.parseInt(request.getParameter("txtNivel"));
                     us.setId(id1);
                     us.setNombre(nombre1);
                     us.setApellido(apellido1);
-                    us.setTipo(tipo1);
                     us.setTelefono(telefono1);
                     us.setEmail(email1);
+                    us.setNivel(nivel1);
                     us.setId(ide);
                     usao.agregar(us);
                     usao.actualizar(us);
@@ -143,12 +143,12 @@ public class Controlador extends HttpServlet {
                     int id=Integer.parseInt(request.getParameter("txtId"));
                     String nombre=request.getParameter("txtNombre");
                     String apellido=request.getParameter("txtApellido");
-                    int id_inmueble=Integer.parseInt(request.getParameter("txtInmueble"));
+
                     
                     in.setId(id);
                     in.setNombre(nombre);
                     in.setApellido(apellido);
-                    in.setId_inmueble(id_inmueble);
+
                     
                     indao.agregar(in);
                     request.getRequestDispatcher("Controlador?menu=Invitados&accion=Listar").forward(request, response);
@@ -164,12 +164,11 @@ public class Controlador extends HttpServlet {
                    int id2=Integer.parseInt(request.getParameter("txtId"));
                     String nombre2=request.getParameter("txtNombre");
                     String apellido2=request.getParameter("txtApellido");
-                    int id_inmueble2=Integer.parseInt(request.getParameter("txtInmueble"));
+
                     
                     in.setId(id2);
                     in.setNombre(nombre2);
                     in.setApellido(apellido2);
-                    in.setId_inmueble(id_inmueble2);
                     in.setId(ide);
                     indao.agregar(in);
                     indao.actualizar(in);
@@ -186,13 +185,73 @@ public class Controlador extends HttpServlet {
            } 
             request.getRequestDispatcher("Invitados.jsp").forward(request, response);
         }
+        
+    if(menu.equals("Inmuebles")){
+      
+           switch (accion){
+               case "Listar":
+                    List lista=inmdao.listar();
+                    request.setAttribute("inmuebles", lista);
+                   break;
+               case "Agregar":
+                    String id=request.getParameter("txtId");
+                    String estado=request.getParameter("txtEstado");
+                    String tipo=request.getParameter("txtTipo");
+                   int id_usuario=Integer.parseInt(request.getParameter("txtId_usuario"));
+                    int id_cuenta=Integer.parseInt(request.getParameter("txtId_cuenta"));
+
+                    
+                    inmueb.setId(id);
+                    inmueb.setEstado(estado);
+                    inmueb.setTipo(tipo);
+                    inmueb.setId_usuario(id_usuario);
+                    inmueb.setId_cuenta(id_cuenta);
+                    
+
+                    
+                    inmdao.agregar(inmueb);
+                    request.getRequestDispatcher("Controlador?menu=Inmuebles&accion=Listar").forward(request, response);
+                   break;
+               case "Editar":
+                    ide2=request.getParameter("id_inm");
+                    Inmueble inm=inmdao.listarId(ide2);
+                    request.setAttribute("inmueble", inm);
+                    request.getRequestDispatcher("Controlador?menu=Inmuebles&accion=Listar").forward(request, response);
+                    break;
+                    
+               case "Actualizar":
+                   String id2=request.getParameter("txtId");
+                    String estado2=request.getParameter("txtEstado");
+                      String tipo2=request.getParameter("txtTipo");
+                    int id_usuario2=Integer.parseInt(request.getParameter("txtId_usuario"));
+                    int id_cuenta2=Integer.parseInt(request.getParameter("txtId_cuenta"));
+                    
+                    inmueb.setId(id2);
+                    inmueb.setEstado(estado2);
+                    inmueb.setTipo(tipo2);
+                    inmueb.setId_usuario(id_usuario2);
+                    inmueb.setId_cuenta(id_cuenta2);
+                    inmueb.setId(ide2);
+                    
+                    inmdao.agregar(inmueb);
+                    inmdao.actualizar(inmueb);
+                    request.getRequestDispatcher("Controlador?menu=Inmuebles&accion=Listar").forward(request, response);
+                   
+                   break;
+               case "Eliminar":
+                   ide2=request.getParameter("id");
+                   inmdao.eliminar(ide2);
+                   request.getRequestDispatcher("Controlador?menu=Inmuebles&accion=Listar").forward(request, response);
+                   break;
+               default:
+                   throw new AssertionError();
+           } 
+            request.getRequestDispatcher("Inmuebles.jsp").forward(request, response);
+        }
        
     
-        if(menu.equals("Inmuebles")){
-           request.getRequestDispatcher("Inmuebles.jsp").forward(request, response);
-        }
     }
-        
+    
 
     
     
