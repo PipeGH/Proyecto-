@@ -1,88 +1,150 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@page session="true"%>
 <!DOCTYPE html>
-<html>
-   <script type="text/javascript">
-    history.forward();
-   </script>
+<html lang="en">
+  
    
+     
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        <link rel="stylesheet" href="css/estilosm.css">
+        <link rel="stylesheet" href="css/estilos.css">
         
-        <title>Pagina Principal</title>
-      
-        <style>
-             
-            body{background-image: url(img/fondo_1.jpg)}
-        </style>
+        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" ="crossoriginanonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js" type="text/javascript"></script>
+	<script src="js/jquery.nivo.slider.js"></script>
+        <script src="js/arriba.js"></script>
     </head>
     <body>
-        <%response.setHeader("Pragma", "no-cache");
-         response.setHeader("Cache-Control", "no-cache");
-        response.setDateHeader("Expires", 0); 
-        request.getSession().invalidate();
-      
-        %>
-        <nav class="navbar navbar-expand-lg navbar-light bg-info">
-  <a class="navbar-brand" href="#">SETWARE</a>
-  <div class="collapse navbar-collapse" id="navbarNav">
-    <ul class="navbar-nav">
-            <li class="nav-item active">
-                <a style="margin-left: 10px; border: none"class="btn btn-outline-light" href="Controlador?menu=Inicio" target="myFrame">Inicio
-                  <img src="img/home3.png" alt="20" width="20"/>
-                </a>
-                
-            </li>
-           
-           <div class="dropdown">
-               <Button style="margin-left: 10px; border: none" class="btn btn-outline-light dropdown-toggle"  type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Invitados
-                   <img src="img/usuarios.png" alt="20" width="20"/>
-               </button>
-                <div class="dropdown-menu text-center">
-                  
-           <a  style="margin-right: 10px; border: none" class="dropdown-item" href="Controlador?menu=ListarInvitados&accion=Listar"target="myFrame">Listar Invitados</a>
-                  <a  style="margin-right: 10px; border: none" class="dropdown-item" href="Controlador?menu=Invitados&accion=Listar"target="myFrame">Gestionar Invitados</a>
-                  <div class="dropdown-divider"></div>
-                </div>   
-            </div>
-           
+        <header>
+            <nav class="menu">
+                <ul>         
+                    <li>
+                        <a  style="margin-top:-4px;"class="dropdown-item"href="Controlador?menu=Inicio" target="myFrame">Inicio
+                            <img style="width: 20px; height: 20px; margin-left: 2px;" src="img/home3.png">
+                        </a> 
+                    </li>
+                    <li>Invitados
+                            <img src="img/usuarios.png" style="width: 20px; height: 20px; margin-left: 2px;">
+                        <ul>
+                            <li>
+                            <a class="dropdown-item" href="Controlador?menu=ListarInvitados&accion=Listar"target="myFrame">Listar Invitados</a>
+                            </li>
+                            <li>
+                            <a class="dropdown-item" href="Controlador?menu=Invitados&accion=Listar"target="myFrame">Gestionar Invitados</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a style="margin-top:-4px" class="dropdown-item"href="Controlador?menu=Inicio" target="myFrame">Acerca de
+                            <img style="width: 20px; height: 20px; margin-left: 2px;"src="img/info.png"> 
+                        </a>
+                    </li>
+                    <div style="margin-left: 500px;">
+                        
+                    </div>
+                    <li>Sesion de ${usuario.getNombre()}
+                        <ul>
+                          <li>
+                              <img  src="img/user.png" alt="60" width="60">
+                          </li>
+                          <li>${usuario.getEmail()}</li>
+                          <form action="Validar" method="POST">  
+                          
+                           <li>
+                            <Button name="accion" value="Salir" class="dropdown-item" href="">
+                                <img src="img/salir.png" alt="20" width="20"/>Salir
+                             </Button>
+                          </li>
+                         </form>
+                      </ul>
+                </li>
                
-    </ul>
-      <div class="dropdown">
-        <button style="border:none"class="btn btn-outline-light dropdown-toggle"  type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              <img src="img/sesion.png" alt="20" width="20"/> 
-              ${usuario.getNombre()}
-        </button>
-                <div class="dropdown-menu text-center">
-                 <a class="dropdown-item" href="#">
-                       <img src="img/user.png" alt="60" width="60"/> 
-                    </a>
-                  <a class="dropdown-item" href="#">${usuario.getNombre()}</a>
-                  <a class="dropdown-item" href="#">${usuario.getEmail()}</a>
-                  <div class="dropdown-divider"></div>
-                  <form action="Validar" method="POST">
-                      <Button name="accion" value="Salir" class="dropdown-item" href="">Salir
-                         <img src="img/salir.png" alt="20" width="20"/>
-                      </Button>
-                   
-                  </form>
+             </ul>
+                          
+            </nav>    
+        </header>
+            <div class="mt-4" style="height: 570px;">
+                    <iframe name="myFrame" style="height: 100%; width: 100%; border:none" src="nuevo.jsp"></iframe> 
+            </div>
+        <footer>
+       
+       <div class="container-footer-all">
+        
+            <div class="container-body">
+
+                <div class="colum1">
+                    <h1>Mas informacion del equipo de Desarrollo</h1>
+
+                    <p>Somos un grupo de estudiantes de la Universidad de Cundinamarca 
+                        de sexto semestre,que se encargo del desarrollo de esta pagina 
+                        dirigida a el conjunto Villa Mayorga.El grupo esta integrado 
+                        por William Celis, Felipe Granica y Marlon Gualteros. 
+                    </p>
+
                 </div>
-             </div>
-          </div>
-        </nav>                 
-        <div class="mt-4" style="height: 570px;">
-            <iframe name="myFrame" style="height: 100%; width: 100%; border:none" href="nuevo.jsp"></iframe> 
-             
-        </div> 
-            <script lenguaje="JavaScript" type="text/javascript">
-                alert("Bienvenido al sistema");
-            </script>
-            
-     
-<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" ="crossoriginanonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-   
+
+                <div class="colum2">
+
+                    <h1>Redes Sociales</h1>
+
+                     <div class="information">
+                        <div class="row">
+                            <img  src="img/facebook.png">
+                            <a href="https://www.facebook.com/FelipeGarnicaH/">Siguenos en Facebook</a>
+                        </div>
+                    </div>
+                    
+                    <div class="information">
+                        <div class="row">
+                            <img src="img/instagram.png ">
+                            <a href="https://www.instagram.com/felipegarnicah/">Siguenos en Instagram</a>
+                        </div>
+                    </div>     
+                </div>
+
+                <div class="colum3">
+
+                    <h1>Informacion Contactos</h1>
+
+                    <div class="row2">
+                        <img src="img/house.png">
+                        <label>Fusagasuga,Cundinamarca</label>
+                    </div>
+
+                    <div class="row2">
+                        <img src="img/smartphone.png">
+                        <label>+57-3197228732</label>
+                    </div>
+
+                    <div class="row2">
+                        <img src="img/contact.png">
+                         <label>jhoanfelipe1616@hotmail.com</label>
+                    </div>
+
+                </div>
+
+            </div>
+        
+        </div>
+        
+        <div class="container-footer">
+               <div class="footer">
+                    <div class="copyright">
+                        © 2020 Todos los Derechos Reservados | <a href="">WFG.DEVELOPER</a>
+                    </div>
+
+                    <div class="information">
+                        <a href="">Informacion Equipo de desarrollo</a> | <a href="">Privacion y Politica</a> | <a href="">Terminos y Condiciones</a>
+                    </div>
+                </div>
+
+            </div>
+        
+    </footer>                                
+                
      </body>
     
 </html>

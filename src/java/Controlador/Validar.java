@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.lang.*;
 import static java.lang.System.out;
-import javax.servlet.http.HttpSession;
+
 
 public class Validar extends HttpServlet {
 
@@ -49,7 +49,6 @@ public class Validar extends HttpServlet {
         }else{
             request.setAttribute("usuario", null);
             response.sendRedirect("index.jsp");
-            
             }
         
         }

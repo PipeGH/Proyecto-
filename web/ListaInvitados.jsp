@@ -16,7 +16,7 @@
             <div class="card-body">
                 <form action="Validar" method="POST">
         <div style="margin: 0 auto;" class="col-sm-8">
-            <table style="margin:0 auto;"class="table table-hover">
+            <table style="margin:0 auto; border: #3ce477 5px solid;  background: rgba(244, 255, 255, 0.7); "class="table table-hover">
                 <thead>
                       
                     <tr>

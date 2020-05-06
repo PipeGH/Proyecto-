@@ -197,8 +197,9 @@ public class Controlador extends HttpServlet {
                     String id=request.getParameter("txtId");
                     String estado=request.getParameter("txtEstado");
                     String tipo=request.getParameter("txtTipo");
-                   int id_usuario=Integer.parseInt(request.getParameter("txtId_usuario"));
+                    int id_usuario=Integer.parseInt(request.getParameter("txtId_usuario"));
                     int id_cuenta=Integer.parseInt(request.getParameter("txtId_cuenta"));
+                    int id_visita=Integer.parseInt(request.getParameter("txtId_visita"));
 
                     
                     inmueb.setId(id);
@@ -206,6 +207,7 @@ public class Controlador extends HttpServlet {
                     inmueb.setTipo(tipo);
                     inmueb.setId_usuario(id_usuario);
                     inmueb.setId_cuenta(id_cuenta);
+                    inmueb.setId_visita(id_visita);
                     
 
                     
@@ -213,7 +215,7 @@ public class Controlador extends HttpServlet {
                     request.getRequestDispatcher("Controlador?menu=Inmuebles&accion=Listar").forward(request, response);
                    break;
                case "Editar":
-                    ide2=request.getParameter("id_inm");
+                    ide2=request.getParameter("id");
                     Inmueble inm=inmdao.listarId(ide2);
                     request.setAttribute("inmueble", inm);
                     request.getRequestDispatcher("Controlador?menu=Inmuebles&accion=Listar").forward(request, response);
@@ -221,18 +223,19 @@ public class Controlador extends HttpServlet {
                     
                case "Actualizar":
                    String id2=request.getParameter("txtId");
-                    String estado2=request.getParameter("txtEstado");
-                      String tipo2=request.getParameter("txtTipo");
-                    int id_usuario2=Integer.parseInt(request.getParameter("txtId_usuario"));
-                    int id_cuenta2=Integer.parseInt(request.getParameter("txtId_cuenta"));
+                   String estado2=request.getParameter("txtEstado");
+                   String tipo2=request.getParameter("txtTipo");
+                     int  id_usuario2=Integer.parseInt(request.getParameter("txtId_usuario"));
+                     int  id_cuenta2=Integer.parseInt(request.getParameter("txtId_cuenta"));
+                     int  id_visita2=Integer.parseInt(request.getParameter("txtId_visita"));
                     
                     inmueb.setId(id2);
                     inmueb.setEstado(estado2);
                     inmueb.setTipo(tipo2);
                     inmueb.setId_usuario(id_usuario2);
                     inmueb.setId_cuenta(id_cuenta2);
+                    inmueb.setId_visita(id_visita2);
                     inmueb.setId(ide2);
-                    
                     inmdao.agregar(inmueb);
                     inmdao.actualizar(inmueb);
                     request.getRequestDispatcher("Controlador?menu=Inmuebles&accion=Listar").forward(request, response);
