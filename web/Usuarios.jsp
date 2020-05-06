@@ -6,18 +6,22 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+      
+     
         <title>Gestionar Usuarios</title>
     </head>
     <body>
         
         <div class="d-flex">
-              <div class="card" col-sm-8>
-            <div class="card-body">
+              <div style="border: none;" class="card" col-sm-8>
+            <div style= "width: 350px; margin-left: 30px; margin-top: 20px; box-shadow: 1px 1px 10px 0px black;" class="card-body">
+                
                 <form action="Controlador?menu=Usuarios" method="POST">
                     <div class="form-group text-center"> 
                     <h3>Registrar Nuevo Usuario</h3>
                             <img src="img/Usuario.png" alt="64" width="64"/>
-                    </div>        
+                    </div>
+                    
                     <div class="form-group">
                         <label>Id</label>
                         <input type="text"  value="${usuario.getId()}" name="txtId" class="form-control"required autofocus="autofocus">
@@ -54,7 +58,8 @@
             </div> 
         </div>
         <div class="col-sm-9">
-            <table class="table table-hover">
+         
+            <table style="margin-left: 60px; border: #3ce477 5px solid; margin-top: 20px; " class="table table-hover">
                 <thead>
                     <tr>
                         <th>Id</th>

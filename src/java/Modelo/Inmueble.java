@@ -3,19 +3,21 @@ package Modelo;
 
 public class Inmueble {
     
-    int id_usuario,id_cuenta;
+    int id_usuario,id_cuenta,id_visita;
     String id,estado,tipo;
    
 public Inmueble(){
 }
 
-public Inmueble(String id,String estado,String tipo, int id_usuario, int id_cuenta ){
+public Inmueble(String id,String estado,String tipo, int id_usuario, int id_cuenta, int id_visita ){
 
     this.id=id;
     this.estado=estado;
        this.tipo=tipo;
     this.id_usuario=id_usuario;
     this.id_cuenta=id_cuenta;
+    this.id_visita=id_visita;
+    
 
 }
 
@@ -56,6 +58,14 @@ public Inmueble(String id,String estado,String tipo, int id_usuario, int id_cuen
 
     public void setTipo(String tipo) {
         this.tipo = tipo;
+    }
+
+    public int getId_visita() {
+        return id_visita;
+    }
+
+    public void setId_visita(int id_visita) {
+        this.id_visita = id_visita;
     }
 
 

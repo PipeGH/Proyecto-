@@ -29,6 +29,7 @@ public class InmuebleDAO {
            inmueb.setTipo(rs.getString("tipo"));
           inmueb.setId_usuario(rs.getInt("id_usuario"));
           inmueb.setId_cuenta(rs.getInt("id_cuenta"));
+          inmueb.setId_cuenta(rs.getInt("id_visita"));
           
        }             
        
@@ -55,6 +56,7 @@ public class InmuebleDAO {
                 inmueb.setTipo(rs.getString(3));
                 inmueb.setId_usuario(rs.getInt(4));
                 inmueb.setId_cuenta(rs.getInt(5));
+                inmueb.setId_visita(rs.getInt(6));
                 
                        lista.add(inmueb);
              
@@ -65,7 +67,7 @@ public class InmuebleDAO {
             return lista;
         }
         public int agregar(Inmueble inmueb){
-            String sql="insert into inmuebles(id_inmueble,estado,tipo,id_usuario,id_cuenta)values(?,?,?,?,?)";
+            String sql="insert into inmuebles(id_inmueble,estado,tipo,id_usuario,id_cuenta,id_visita)values(?,?,?,?,?,?)";
             try{
             con=cn.Conexion();
             ps=con.prepareStatement(sql);
@@ -74,6 +76,7 @@ public class InmuebleDAO {
             ps.setString(3, inmueb.getTipo());
             ps.setInt(4, inmueb.getId_usuario());
             ps.setInt(5, inmueb.getId_cuenta());
+            ps.setInt(6, inmueb.getId_visita());
             ps.executeUpdate();
             }catch(Exception e){
             }
@@ -93,6 +96,7 @@ public class InmuebleDAO {
             inm.setTipo(rs.getString(3));
             inm.setId_usuario(rs.getInt(4));
             inm.setId_cuenta(rs.getInt(5));
+            inm.setId_visita(rs.getInt(6));
             
             }
         }catch(Exception e){
@@ -102,7 +106,7 @@ public class InmuebleDAO {
         return inm;
         }
         public int actualizar(Inmueble inmueb){
-        String sql="update inmuebles set estado=?, tipo=?, id_usuario=?,id_cuenta=?  where id_inmueble=?";
+        String sql="update inmuebles set estado=?, tipo=?, id_usuario=?, id_cuenta=?,id_visita=? where id_inmueble=?";
             try{
             con=cn.Conexion();
             ps=con.prepareStatement(sql);
@@ -111,7 +115,10 @@ public class InmuebleDAO {
             ps.setString(2, inmueb.getTipo());
             ps.setInt(3, inmueb.getId_usuario());
             ps.setInt(4, inmueb.getId_cuenta());
-            ps.setString(5, inmueb.getId());
+            ps.setInt(5, inmueb.getId_visita());
+            ps.setString(6, inmueb.getId());
+       
+            
             ps.executeUpdate();
             }catch(Exception e){
             }
