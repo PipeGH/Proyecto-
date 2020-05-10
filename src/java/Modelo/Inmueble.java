@@ -3,13 +3,13 @@ package Modelo;
 
 public class Inmueble {
     
-    int id_usuario,id_visita;
-    String id,estado,tipo,id_cuenta;
+    int id_usuario,id_cuenta,id_visita;
+    String id,estado,tipo;
    
 public Inmueble(){
 }
 
-public Inmueble(String id,String estado,String tipo, int id_usuario, String id_cuenta, int id_visita ){
+public Inmueble(String id,String estado,String tipo, int id_usuario, int id_cuenta, int id_visita ){
 
     this.id=id;
     this.estado=estado;
@@ -37,11 +37,11 @@ public Inmueble(String id,String estado,String tipo, int id_usuario, String id_c
         this.id_usuario = id_usuario;
     }
 
-    public String getId_cuenta() {
+    public int getId_cuenta() {
         return id_cuenta;
     }
 
-    public void setId_cuenta(String id_cuenta) {
+    public void setId_cuenta(int id_cuenta) {
         this.id_cuenta = id_cuenta;
     }
     public String getEstado() {

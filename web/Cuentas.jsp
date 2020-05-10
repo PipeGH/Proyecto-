@@ -26,10 +26,6 @@
                         <input type="text" value="${cuenta.getId_cuenta()}" name="txtId_cuenta" class="form-control"required autofocus="autofocus">
                     </div>
                     <div class="form-group">
-                        <label>Id_inmueble</label>
-                        <input type="text" value="${cuenta.getNombreU()}" name="txtNombreU" class="form-control">
-                    </div>
-                    <div class="form-group">
                         <label>Monto</label>
                         <input type="number"value="${cuenta.getMonto()}" name="txtMonto" class="form-control"required>
                     </div>
@@ -50,7 +46,6 @@
                 <thead>
                     <tr>
                         <th>Id_cuenta</th>
-                        <th>Nombre Usuario</th>
                         <th>Monto</th>
                         <th>Descripcion</th>
                         <th>Accion</th> 
@@ -60,7 +55,6 @@
                <c:forEach var="cu" items="${cuentas}">       
                 <tr>
                          <td>${cu.getId_cuenta()}</td>
-                         <td>${cu.getNombre()}</td>
                          <td>${cu.getMonto()}</td>
                          <td>${cu.getDescripcion()}</td>
 

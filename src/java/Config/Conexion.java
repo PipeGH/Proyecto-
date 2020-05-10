@@ -6,7 +6,7 @@ import java.sql.DriverManager;
 
 public class Conexion {
    Connection con;
-   String url="jdbc:postgresql://localhost:5432/Conjunto";
+   String url="jdbc:postgresql://localhost:5432/Conjunto1";
    String user="postgres";
    String pass="felipe1";
  public Connection Conexion(){
