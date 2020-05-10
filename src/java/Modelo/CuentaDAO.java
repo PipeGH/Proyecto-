@@ -1,4 +1,3 @@
-
 package Modelo;
 
 import Config.Conexion;
@@ -102,7 +101,7 @@ public class CuentaDAO {
         return cuen;
         }
         public int actualizar(Cuenta cu){
-        String sql="update cuentas set monto=?, descripcion=?, where id_cuenta=?";
+        String sql="update cuentas set monto=?, descripcion=? where id_cuenta=?";
             try{
             con=cn.Conexion();
             ps=con.prepareStatement(sql);
