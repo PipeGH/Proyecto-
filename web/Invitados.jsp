@@ -78,19 +78,23 @@
 			<div class="popup" id="popup">
 				<a href="#" id="btn-cerrar-popup" class="btn-cerrar-popup"><i class="fas fa-times"></i></a>
 				<h3>Registrar visita </h3>
-				<form action="">
+				<form action="Controlador?menu=Invitados" metohd="POST">
 					<div class="contenedor-inputs">
-						<input type="text" placeholder="Id_visita">
-						<input type="text" placeholder="Id_invitado">
-						<input type="date" id="start" class="fecha" placeholder=" fecha"  min="2020-01-01" max="2020-12-31">
-					</div>
-					<input type="submit" class="btn-submit" value="Agregar Visita">
-					<input type="reset" class="btn-reset" value="Limpiar">
-					
-				</form>
+                                            <p>Una vez se complete el registro de  un Invitado proceda a 
+                                                llenar los datos correspondientes en el formulario visitas
+                                      </p>
+                                            <ul>
+                                                <li>
+                                                <a class="btn btn-info" href="Controlador?menu=ListarVisitas&accion=Listar"target="myFrame">Visitas</a>
+                                                </li>
+                                            </ul>		
+				
 			</div>
+                                </form>    
 		</div>
-	</div>    
+	</div>
+                    
+                       
             <script src="js/popup.js"></script>
             
           <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
@@ -100,4 +104,6 @@
     </body>
     
 </html>
+
+
 

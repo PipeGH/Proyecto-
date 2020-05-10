@@ -38,6 +38,7 @@
                             <img style="width: 20px; height: 20px; margin-left: 2px;" src="img/home3.png">
                         </a> 
                     </li>
+                   
                     
                     <li>Usuarios
                             <img src="img/usuarios.png" style="width: 20px; height: 20px; margin-left: 2px;">
@@ -58,6 +59,14 @@
                             </li>
                             <li>
                             <a class="dropdown-item" href="Controlador?menu=Invitados&accion=Listar"target="myFrame">Gestionar Invitados</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>Visitas
+                            <img src="img/usuarios.png" style="width: 20px; height: 20px; margin-left: 2px;">
+                        <ul>
+                            <li>
+                            <a class="dropdown-item" href="Controlador?menu=ListarVisitas&accion=Listar"target="myFrame">Listar Visitas</a>
                             </li>
                         </ul>
                     </li>

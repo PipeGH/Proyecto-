@@ -7,7 +7,11 @@ import Modelo.Invitado;
 import Modelo.InvitadoDAO;
 import Modelo.Usuario;
 import Modelo.UsuarioDAO;
+import Modelo.Visita;
+import Modelo.VisitaDAO;
 import java.io.IOException;
+import java.time.Instant;
+import java.util.Date;
 import java.util.List;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -23,6 +27,9 @@ public class Controlador extends HttpServlet {
     InmuebleDAO inmdao=new InmuebleDAO();
     Cuenta cu= new Cuenta();
     CuentaDAO cuentdao= new CuentaDAO();
+    Visita vis=new Visita();
+    VisitaDAO visidao=new VisitaDAO();
+    
     int ide;
     String ide2;
   
@@ -159,6 +166,7 @@ public class Controlador extends HttpServlet {
                     indao.agregar(in);
                     request.getRequestDispatcher("Controlador?menu=Invitados&accion=Listar").forward(request, response);
                    break;
+                 
                case "Editar":
                     ide=Integer.parseInt(request.getParameter("id"));
                     Invitado i=indao.listarId(ide);
@@ -324,12 +332,73 @@ public class Controlador extends HttpServlet {
            } 
             request.getRequestDispatcher("Cuentas.jsp").forward(request, response);
         }
+      if(menu.equals("ListarVisitas")){
+            
+         switch (accion){
+               case "Listar":
+                    List lista=visidao.listar();
+                    request.setAttribute("visitas", lista);
+                   break;
+                   
+          default:
+                   throw new AssertionError();
+           }
         
-    }
+         request.getRequestDispatcher("ListarVisitas.jsp").forward(request, response);
+        }
+        
     
+    
+    if(menu.equals("Visitas")){
+           switch (accion){
+               case "Listar":
+                    List lista=visidao.listar();
+                    request.setAttribute("visitas", lista);
+                   break;
+               case "Agregar":
+                    int id_visita=Integer.parseInt(request.getParameter("txtId_visita"));
+                    int id_invitado=Integer.parseInt(request.getParameter("txtId_invitado"));
+                 
+                    vis.setId_visita(id_visita);
+                    vis.setId_invitado(id_invitado);
+                   
+
+                    
+                    visidao.agregar(vis);
+                    request.getRequestDispatcher("Controlador?menu=Visitas&accion=Listar").forward(request, response);
+                   break;
+               case "Editar":
+                    ide=Integer.parseInt(request.getParameter("id_visita"));
+                    Visita vi=visidao.listarId(ide);
+                    request.setAttribute("visita", vi);
+                    request.getRequestDispatcher("Controlador?menu=Visitas&accion=Listar").forward(request, response);
+                    break;
+                    
+               case "Actualizar":
+                   int id_visita2=Integer.parseInt(request.getParameter("txtId_visita"));
+                    int id_invitado2=Integer.parseInt(request.getParameter("txtId_invitado"));
+        
+                    vis.setId_visita(id_visita2);
+                    vis.setId_invitado(id_invitado2);
+                    vis.setId_visita(ide);
+                    visidao.agregar(vis);
+                    visidao.actualizar(vis);
+                    request.getRequestDispatcher("Controlador?menu=Visitas&accion=").forward(request, response);
+                   
+                   break;
+               case "Eliminar":
+                   ide=Integer.parseInt(request.getParameter("id_visita"));
+                   visidao.eliminar(ide);
+                   request.getRequestDispatcher("Controlador?menu=Visitas&accion=Listar").forward(request, response);
+                   break;
+               default:
+                   throw new AssertionError();
+           } 
+            request.getRequestDispatcher("ListarVisitas.jsp").forward(request, response);
+        }
 
     
-    
+    }
 
     
 
