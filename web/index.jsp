@@ -1,4 +1,3 @@
-  
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@page session="true"%>
 <!DOCTYPE html>
@@ -39,7 +38,7 @@
                         </div>
                         <div class="form-group">
                             <label>Password:</label>
-                            <input type="password" name="txtpass" class="form-control"required/>
+                            <input type="password" minlength="8" name="txtpass" class="form-control"required/>
                             
                         </div>
                         <div>

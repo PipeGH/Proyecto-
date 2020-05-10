@@ -5,15 +5,17 @@ public class Cuenta {
  
     int id_cuenta=0; 
     String descripcion, monto;
+    String nombre;
     
  public Cuenta(){
  }
  
-  public Cuenta( int id_cuenta, String monto,  String descripcion) {
+  public Cuenta( int id_cuenta, String monto,  String descripcion, String nombre) {
   
      this.id_cuenta=id_cuenta;
      this.monto=monto;
      this.descripcion=descripcion;
+     this.nombre=nombre;
   } 
 
     public int getId_cuenta() {
@@ -38,6 +40,14 @@ public class Cuenta {
 
     public void setDescripcion(String descripcion) {
         this.descripcion = descripcion;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
     }
   
   

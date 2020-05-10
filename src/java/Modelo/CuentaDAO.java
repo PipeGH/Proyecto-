@@ -55,6 +55,7 @@ public class CuentaDAO {
                 cu.setId_cuenta(rs.getInt(1));
                 cu.setMonto(rs.getString(2));
                 cu.setDescripcion(rs.getString(3));
+                cu.setNombre(rs.getString(4));
                 
                 
                        lista.add(cu);
@@ -66,13 +67,14 @@ public class CuentaDAO {
             return lista;
         }
         public int agregar(Cuenta cu){
-            String sql="insert into cuentas(id_cuenta,monto,descripcion)values(?,?,?)";
+            String sql="insert into cuentas(id_cuenta,monto,descripcion,nombre)values(?,?,?,?)";
             try{
             con=cn.Conexion();
             ps=con.prepareStatement(sql);
             ps.setInt(1, cu.getId_cuenta());
             ps.setString(2, cu.getMonto());
             ps.setString(3, cu.getDescripcion());
+            ps.setString(4, cu.getNombre());
             
             ps.executeUpdate();
             }catch(Exception e){
@@ -91,6 +93,7 @@ public class CuentaDAO {
             cuen.setId_cuenta(rs.getInt(1));
             cuen.setMonto(rs.getString(2));
             cuen.setDescripcion(rs.getString(3));
+            cuen.setNombre(rs.getString(4));
           
             
             }
@@ -101,15 +104,15 @@ public class CuentaDAO {
         return cuen;
         }
         public int actualizar(Cuenta cu){
-        String sql="update cuentas set monto=?, descripcion=? where id_cuenta=?";
+        String sql="update cuentas set monto=?, descripcion=?, nombre=? where id_cuenta=?";
             try{
             con=cn.Conexion();
             ps=con.prepareStatement(sql);
             
             ps.setString(1, cu.getMonto());
             ps.setString(2, cu.getDescripcion());
-            ps.setInt(3, cu.getId_cuenta());
-       
+            ps.setString(3, cu.getNombre());
+            ps.setInt(4, cu.getId_cuenta());
             
             ps.executeUpdate();
             }catch(Exception e){
@@ -129,3 +132,4 @@ public class CuentaDAO {
 }
 
   
+	

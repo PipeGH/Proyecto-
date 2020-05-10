@@ -21,6 +21,7 @@
                         <th>Id_cuenta</th>
                         <th>Monto</th>
                         <th>Descripcion</th>
+                        <th>Nombre usuario</th>
                     </tr>
                 </thead>
            <tbody>
@@ -29,6 +30,7 @@
                          <td>${cu.getId_cuenta()}</td>
                          <td>${cu.getMonto()}</td>
                          <td>${cu.getDescripcion()}</td>
+                         <td>${cu.getNombre()}</td>
 
                        </tr>
             </c:forEach>        

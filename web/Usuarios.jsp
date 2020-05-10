@@ -36,7 +36,7 @@
                     </div>
                     <div class="form-group">
                         <label>Telefono</label>
-                        <input type="text" value="${usuario.getTelefono()}"name="txtTelefono" class="form-control"required>
+                        <input type="tel" value="${usuario.getTelefono()}"name="txtTelefono" class="form-control"required>
                     </div>
                     <div class="form-group">
                         <label>Email</label>

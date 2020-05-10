@@ -33,6 +33,11 @@
                         <label>Descripcion</label>
                         <input type="text"  value="${cuenta.getDescripcion()}"name="txtDescripcion" class="form-control"required>
                     </div>
+                    <div class="form-group">
+                        <label>Nombre Usuario</label>
+                        <input type="text"  value="${cuenta.getNombre()}"name="txtNombre" class="form-control"required>
+                    </div>
+                    
                     
                     <input type="submit" name="accion" value="Agregar" class="btn btn-info">
                     <input type="submit" name="accion" value="Actualizar" class="btn btn-success">
@@ -48,6 +53,7 @@
                         <th>Id_cuenta</th>
                         <th>Monto</th>
                         <th>Descripcion</th>
+                        <th>Nombre usuario</th>
                         <th>Accion</th> 
                     </tr>
                 </thead>
@@ -57,6 +63,7 @@
                          <td>${cu.getId_cuenta()}</td>
                          <td>${cu.getMonto()}</td>
                          <td>${cu.getDescripcion()}</td>
+                         <td>${cu.getNombre()}</td>
 
                          
                          <td>
