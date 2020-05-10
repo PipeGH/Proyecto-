@@ -28,8 +28,8 @@ public class InmuebleDAO {
           inmueb.setEstado(rs.getString("estado"));
            inmueb.setTipo(rs.getString("tipo"));
           inmueb.setId_usuario(rs.getInt("id_usuario"));
-          inmueb.setId_cuenta(rs.getInt("id_cuenta"));
-          inmueb.setId_cuenta(rs.getInt("id_visita"));
+          inmueb.setId_cuenta(rs.getString("id_cuenta"));
+          inmueb.setId_visita(rs.getInt("id_visita"));
           
        }             
        
@@ -55,7 +55,7 @@ public class InmuebleDAO {
                 inmueb.setEstado(rs.getString(2));
                 inmueb.setTipo(rs.getString(3));
                 inmueb.setId_usuario(rs.getInt(4));
-                inmueb.setId_cuenta(rs.getInt(5));
+                inmueb.setId_cuenta(rs.getString(5));
                 inmueb.setId_visita(rs.getInt(6));
                 
                        lista.add(inmueb);
@@ -75,7 +75,7 @@ public class InmuebleDAO {
             ps.setString(2, inmueb.getEstado());
             ps.setString(3, inmueb.getTipo());
             ps.setInt(4, inmueb.getId_usuario());
-            ps.setInt(5, inmueb.getId_cuenta());
+            ps.setString(5, inmueb.getId_cuenta());
             ps.setInt(6, inmueb.getId_visita());
             ps.executeUpdate();
             }catch(Exception e){
@@ -95,7 +95,7 @@ public class InmuebleDAO {
             inm.setEstado(rs.getString(2));
             inm.setTipo(rs.getString(3));
             inm.setId_usuario(rs.getInt(4));
-            inm.setId_cuenta(rs.getInt(5));
+            inm.setId_cuenta(rs.getString(5));
             inm.setId_visita(rs.getInt(6));
             
             }
@@ -114,11 +114,10 @@ public class InmuebleDAO {
             ps.setString(1, inmueb.getEstado());
             ps.setString(2, inmueb.getTipo());
             ps.setInt(3, inmueb.getId_usuario());
-            ps.setInt(4, inmueb.getId_cuenta());
+            ps.setString(4, inmueb.getId_cuenta());
             ps.setInt(5, inmueb.getId_visita());
             ps.setString(6, inmueb.getId());
-       
-            
+      
             ps.executeUpdate();
             }catch(Exception e){
             }
@@ -135,4 +134,6 @@ public class InmuebleDAO {
         
   }
 }
+
+
 

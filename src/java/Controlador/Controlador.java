@@ -18,6 +18,10 @@ public class Controlador extends HttpServlet {
     InvitadoDAO indao=new InvitadoDAO();
     Inmueble inmueb= new Inmueble();
     InmuebleDAO inmdao=new InmuebleDAO();
+    Cuenta cu= new Cuenta();
+    CuentaDAO cuentdao= new CuentaDAO();
+    CuentaUsuario cuenta = new CuentaUsuario();
+    CuentaUsuarioDAO cuendao= new CuentaUsuarioDAO();
     int ide;
     String ide2;
   
@@ -66,6 +70,7 @@ public class Controlador extends HttpServlet {
                     request.setAttribute("usuarios", lista);
                    break;
                case "Agregar":
+                   
                     int id=Integer.parseInt(request.getParameter("txtId"));
                     String nombre=request.getParameter("txtNombre");
                     String apellido=request.getParameter("txtApellido");
@@ -185,6 +190,7 @@ public class Controlador extends HttpServlet {
            } 
             request.getRequestDispatcher("Invitados.jsp").forward(request, response);
         }
+    
         
     if(menu.equals("Inmuebles")){
       
@@ -198,7 +204,7 @@ public class Controlador extends HttpServlet {
                     String estado=request.getParameter("txtEstado");
                     String tipo=request.getParameter("txtTipo");
                     int id_usuario=Integer.parseInt(request.getParameter("txtId_usuario"));
-                    int id_cuenta=Integer.parseInt(request.getParameter("txtId_cuenta"));
+                    String id_cuenta=request.getParameter("txtId_cuenta");
                     int id_visita=Integer.parseInt(request.getParameter("txtId_visita"));
 
                     
@@ -208,9 +214,7 @@ public class Controlador extends HttpServlet {
                     inmueb.setId_usuario(id_usuario);
                     inmueb.setId_cuenta(id_cuenta);
                     inmueb.setId_visita(id_visita);
-                    
-
-                    
+                                        
                     inmdao.agregar(inmueb);
                     request.getRequestDispatcher("Controlador?menu=Inmuebles&accion=Listar").forward(request, response);
                    break;
@@ -225,9 +229,9 @@ public class Controlador extends HttpServlet {
                    String id2=request.getParameter("txtId");
                    String estado2=request.getParameter("txtEstado");
                    String tipo2=request.getParameter("txtTipo");
-                     int  id_usuario2=Integer.parseInt(request.getParameter("txtId_usuario"));
-                     int  id_cuenta2=Integer.parseInt(request.getParameter("txtId_cuenta"));
-                     int  id_visita2=Integer.parseInt(request.getParameter("txtId_visita"));
+                   int  id_usuario2=Integer.parseInt(request.getParameter("txtId_usuario"));
+                   String id_cuenta2=request.getParameter("txtId_cuenta");
+                   int  id_visita2=Integer.parseInt(request.getParameter("txtId_visita"));
                     
                     inmueb.setId(id2);
                     inmueb.setEstado(estado2);
@@ -251,15 +255,79 @@ public class Controlador extends HttpServlet {
            } 
             request.getRequestDispatcher("Inmuebles.jsp").forward(request, response);
         }
-       
-    
+     if(menu.equals("ListarCuentas")){
+            
+         switch (accion){
+               case "Listar":
+                    List lista=cuentdao.listar();
+                    request.setAttribute("cuentas", lista);
+                   break;
+                   
+          default:
+                   throw new AssertionError();
+           }
+        
+         request.getRequestDispatcher("ListarCuentas.jsp").forward(request, response);
+        }
+     if(menu.equals("Cuentas")){
+           switch (accion){
+               case "Listar":
+                    List lista=cuentdao.listar();
+                    request.setAttribute("cuentas", lista);
+                   break;
+               case "Agregar":
+                    
+                    String id_cuenta=request.getParameter("txtId_cuenta");
+                    String nombre=request.getParameter("txtNombreU");
+                    String monto= request.getParameter("txtMonto");
+                    String descripcion=request.getParameter("txtDescripcion");
+                    
+                    cu.setId_cuenta(id_cuenta);
+                    cu.setNombre(nombre);
+                    cu.setMonto(monto);
+                    cu.setDescripcion(descripcion);
+
+                    
+                    cuentdao.agregar(cu);
+                    request.getRequestDispatcher("Controlador?menu=Cuentas&accion=Listar").forward(request, response);
+                   break;
+               case "Editar":
+                    ide2=request.getParameter("id_cuenta");
+                    Cuenta cuen=cuentdao.listarId(ide2);
+                    request.setAttribute("cuenta", cuen);
+                    request.getRequestDispatcher("Controlador?menu=Cuentas&accion=Listar").forward(request, response);
+                    break;
+                    
+               case "Actualizar":
+                   String id_cuenta2=request.getParameter("txtId_cuenta");
+                   String nombre2=request.getParameter("txtNombreU");
+                   String monto2= request.getParameter("txtMonto");
+                    String descripcion2=request.getParameter("txtDescripcion");
+
+                    
+                    cu.setId_cuenta(id_cuenta2);
+                    cu.setNombre(nombre2);
+                    cu.setMonto(monto2);
+                    cu.setDescripcion(descripcion2);
+                    cu.setId_cuenta(ide2);
+                    cuentdao.agregar(cu);
+                    cuentdao.actualizar(cu);
+                    request.getRequestDispatcher("Controlador?menu=Cuentas&accion=Listar").forward(request, response);
+                   
+                   break;
+               case "Eliminar":
+                   ide2=request.getParameter("id_cuenta");
+                   cuentdao.eliminar(ide2);
+                   request.getRequestDispatcher("Controlador?menu=Cuentas&accion=Listar").forward(request, response);
+                   break;
+               default:
+                   throw new AssertionError();
+           } 
+            request.getRequestDispatcher("Cuentas.jsp").forward(request, response);
+        
+     }
+             
     }
-    
-
-    
-    
-
-    
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
