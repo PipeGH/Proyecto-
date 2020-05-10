@@ -279,7 +279,7 @@ public class Controlador extends HttpServlet {
                    break;
                case "Agregar":
                     int id_cuenta=Integer.parseInt(request.getParameter("txtId_cuenta"));
-                    float monto= Float.parseFloat(request.getParameter("txtMonto"));
+                    String monto=  request.getParameter("txtMonto");
                     String descripcion=request.getParameter("txtDescripcion");
 
                     cu.setId_cuenta(id_cuenta);
@@ -299,7 +299,7 @@ public class Controlador extends HttpServlet {
                     
                case "Actualizar":
                    int id_cuenta2=Integer.parseInt(request.getParameter("txtId_cuenta"));
-                   float monto2=Float.parseFloat(request.getParameter("txtMonto"));
+                   String monto2= request.getParameter("txtMonto");
                    String descripcion2=request.getParameter("txtDescripcion");
 
                     

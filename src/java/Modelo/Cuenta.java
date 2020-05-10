@@ -3,14 +3,13 @@ package Modelo;
 
 public class Cuenta {
  
-    int id_cuenta=0;
-    float monto;
-    String descripcion;
+    int id_cuenta=0; 
+    String descripcion, monto;
     
  public Cuenta(){
  }
  
-  public Cuenta( int id_cuenta, float monto,  String descripcion) {
+  public Cuenta( int id_cuenta, String monto,  String descripcion) {
   
      this.id_cuenta=id_cuenta;
      this.monto=monto;
@@ -25,11 +24,11 @@ public class Cuenta {
         this.id_cuenta = id_cuenta;
     }
 
-    public float getMonto() {
+    public String getMonto() {
         return monto;
     }
 
-    public void setMonto(float monto) {
+    public void setMonto(String monto) {
         this.monto = monto;
     }
 

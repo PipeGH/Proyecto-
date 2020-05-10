@@ -28,7 +28,7 @@ public class CuentaDAO {
        while(rs.next()){
            
           cu.setId_cuenta(rs.getInt("id_cuenta"));
-          cu.setMonto(rs.getFloat("monto"));
+          cu.setMonto(rs.getString("monto"));
            cu.setDescripcion(rs.getString("descripcion"));
          
           
@@ -53,7 +53,7 @@ public class CuentaDAO {
                  Cuenta cu = new Cuenta();
                 
                 cu.setId_cuenta(rs.getInt(1));
-                cu.setMonto(rs.getFloat(2));
+                cu.setMonto(rs.getString(2));
                 cu.setDescripcion(rs.getString(3));
                 
                 
@@ -71,7 +71,7 @@ public class CuentaDAO {
             con=cn.Conexion();
             ps=con.prepareStatement(sql);
             ps.setInt(1, cu.getId_cuenta());
-            ps.setFloat(2, cu.getMonto());
+            ps.setString(2, cu.getMonto());
             ps.setString(3, cu.getDescripcion());
             
             ps.executeUpdate();
@@ -89,7 +89,7 @@ public class CuentaDAO {
             while(rs.next()){
                 
             cuen.setId_cuenta(rs.getInt(1));
-            cuen.setMonto(rs.getFloat(2));
+            cuen.setMonto(rs.getString(2));
             cuen.setDescripcion(rs.getString(3));
           
             
@@ -106,7 +106,7 @@ public class CuentaDAO {
             con=cn.Conexion();
             ps=con.prepareStatement(sql);
             
-            ps.setFloat(1, cu.getMonto());
+            ps.setString(1, cu.getMonto());
             ps.setString(2, cu.getDescripcion());
             ps.setInt(3, cu.getId_cuenta());
        
