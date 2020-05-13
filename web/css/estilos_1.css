@@ -14,6 +14,7 @@ body {
 	max-width: 1000px;
 	margin-left: 60px;
         margin-top: 20px;
+        position: relative;
         
 }
 
@@ -51,7 +52,7 @@ body {
 	left: 0;
 	right: 0;
 	align-items: center;
-	justify-content: center;
+	justify-content:center;
 	display: flex;
 	visibility: hidden;
 }

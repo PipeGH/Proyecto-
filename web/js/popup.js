@@ -2,7 +2,9 @@ var btnAbrirPopup = document.getElementById('btn-abrir-popup'),
 	overlay = document.getElementById('overlay'),
 	popup = document.getElementById('popup'),
 	btnCerrarPopup = document.getElementById('btn-cerrar-popup');
-
+  $("btn-abrir-popup").draggable({
+      handle: ".modal-header"
+  });
 btnAbrirPopup.addEventListener('click', function(){
 	overlay.classList.add('active');
 	popup.classList.add('active');

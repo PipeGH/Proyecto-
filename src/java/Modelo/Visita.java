@@ -5,12 +5,12 @@ import java.util.Date;
 
 public class Visita {
     int id_visita,id_invitado;
-    Date fecha;
+    String fecha;
   
 public Visita(){
 }    
 
-public Visita(int id_visita, int id_invitado, Date fecha){
+public Visita(int id_visita, int id_invitado, String fecha){
 
  this.id_visita=id_visita;
  this.id_invitado=id_invitado;
@@ -33,11 +33,11 @@ public Visita(int id_visita, int id_invitado, Date fecha){
         this.id_invitado = id_invitado;
     }
 
-    public Date getFecha() {
+    public String getFecha() {
         return fecha;
     }
 
-    public void setFecha(Date fecha) {
+    public void setFecha(String fecha) {
         this.fecha = fecha;
     }
 

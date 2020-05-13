@@ -13,22 +13,38 @@
 	<link rel="stylesheet" href="css/estilos_1.css"><title>Lista de Visitas</title>
     </head>
     <body>
-        
-        <h1 class="text-center">Lista de Visitas</h1>
         <div class="d-flex">
-         <div class="card" col-sm-9>
-            <div class="card-body">
-                <form action="Validar" method="POST">
-        <div style="margin: 0 auto;" class="col-sm-8">
-            <table style="margin:0 auto; border: #3ce477 5px solid;  background: rgba(244, 255, 255, 0.7); "class="table table-hover">
-                <thead>
+           <div class="contenedor">
+		
+			<button id="btn-abrir-popup" class="btn-abrir-popup">Registrar Visita</button>
+			
+		<div class="overlay" id="overlay">
+			<div class="popup" id="popup">
+				<a href="#" id="btn-cerrar-popup" class="btn-cerrar-popup"><i class="fas fa-times"></i></a>
+				<h3>Registrar visita </h3>
+				<form action="Controlador?menu=Visitas" method="POST">
+					<div class="contenedor-inputs">
+						<input type="text" name="txtId_visita" placeholder="Id_visita">
+						<input type="text" name="txtId_invitado" placeholder="Id_invitado">
+						<input type="date" name="txtFecha" id="start" class="fecha" placeholder=" fecha"  min="2020-01-01" max="2020-12-31">
+					</div>
+					<input type="submit" name="accion" class="btn-submit" value="Agregar">
+					<input type="reset" class="btn-reset" value="Limpiar">
+					
+				</form>
+			</div>
+		</div>
+            </div>
+	  </div> 
+        <div class="d-flex">
+         <div class="col-sm-6">    
+            <table  style="margin-left: 600px;  border: #3ce477 5px solid;" class="table table-hover "><thead>
                       
                     <tr>
                         <th>Id_Visita</th>
                         <th>Id_invitado</th>
                         <th>Fecha</th>
                         <th>Accion</th>
-                    </tr>
                 </thead>
            <tbody>
                <c:forEach var="vis" items="${visitas}">       
@@ -52,42 +68,12 @@
                     
            </tbody>
         </table>
-            
-          </div> 
-                    
-            </form>
-        </div>
-      </div>
-    </div>   
-  
-        <div class="contenedor">
-		
-			<button id="btn-abrir-popup" class="btn-abrir-popup">Registrar Visita</button>
-			
-		<div class="overlay" id="overlay">
-			<div class="popup" id="popup">
-				<a href="#" id="btn-cerrar-popup" class="btn-cerrar-popup"><i class="fas fa-times"></i></a>
-				<h3>Registrar visita </h3>
-				<form action="Controlador?menu=Visitas" method="POST">
-					<div class="contenedor-inputs">
-						<input type="text" name="txtId_visita" placeholder="Id_visita">
-						<input type="text" name="txtId_invitado" placeholder="Id_invitado">
-						<input type="date" name="txtFecha" id="start" class="fecha" placeholder=" fecha"  min="2020-01-01" max="2020-12-31">
-					</div>
-					<input type="submit" name="accion" class="btn-submit" value="Agregar">
-					<input type="reset" class="btn-reset" value="Limpiar">
-					
-				</form>
-			</div>
-		</div>
-            </div>
-	
-            <script src="js/popup.js"></script>
-            
-       </div>         
-            
-        
-          <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+        </div> 
+ 
+       </div>
+      <script src="js/popup.js"></script>  
+      
+         <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
           <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
           <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
         

@@ -31,12 +31,10 @@
                         <ul>
                             <li>
                                 
-                            <a class="dropdown-item" href="Controlador?menu=ListarCuentasU&nombre=<%
-                                out.print(session.getAttribute("user"));
-                               %>&accion=ListarCuentas"target="myFrame">Listar Cuentas</a>
+                                <a class="dropdown-item" href="Controlador?menu=ListarCuentasU&nombre=<% out.print(session.getAttribute("user"));%>&accion=Listar" target="myFrame">Listar Cuentas</a>
                             </li>
                             <li>
-                            <a class="dropdown-item" href="Controlador?menu=Cuentas&accion=Listar"target="myFrame">Gestionar Perfil</a>
+                                <a class="dropdown-item" href="Controlador?menu=Cuentas&accion=Listar"target="myFrame">Gestionar Perfil</a>
                             </li>
                         </ul>
                     </li>

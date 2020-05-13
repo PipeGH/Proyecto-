@@ -6,7 +6,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
-
+import Modelo.CuentaUsuario;
 
 public class CuentaDAO {
    
@@ -128,8 +128,15 @@ public class CuentaDAO {
             }catch(Exception e){
             }
         
-  }
+        }
+     
 }
+
+ 
+
+
+        
+  
 
   
 	

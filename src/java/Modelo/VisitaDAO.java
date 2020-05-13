@@ -29,7 +29,7 @@ public class VisitaDAO {
            
           vis.setId_visita(rs.getInt("id_visita"));
           vis.setId_invitado(rs.getInt("id_invitado"));
-          vis.setFecha(rs.getDate("fecha"));
+          vis.setFecha(rs.getString("fecha"));
          
           
        }             
@@ -54,7 +54,7 @@ public class VisitaDAO {
                 
                 vis.setId_visita(rs.getInt(1));
                 vis.setId_invitado(rs.getInt(2));
-                vis.setFecha(rs.getDate(3));
+                vis.setFecha(rs.getString(3));
                 
                 
                 
@@ -73,7 +73,7 @@ public class VisitaDAO {
             ps=con.prepareStatement(sql);
             ps.setInt(1, vis.getId_visita());
             ps.setInt(2, vis.getId_invitado());
-            ps.setDate(3, (Date) vis.getFecha());
+            ps.setString(3, vis.getFecha());
          
             
             ps.executeUpdate();
@@ -92,7 +92,7 @@ public class VisitaDAO {
                 
             visi.setId_visita(rs.getInt(1));
             visi.setId_visita(rs.getInt(2));
-            visi.setFecha(rs.getDate(3));
+            visi.setFecha(rs.getString(3));
             
           
             
@@ -111,7 +111,7 @@ public class VisitaDAO {
             
           
             ps.setInt(1, vis.getId_invitado());
-            ps.setDate(2,(Date) vis.getFecha());
+            ps.setString(2,vis.getFecha());
             ps.setInt(2, vis.getId_visita());
             
             ps.executeUpdate();

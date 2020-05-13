@@ -89,10 +89,10 @@
                                                 </li>
                                             </ul>		
 				
-			</div>
+			                </div>
                                 </form>    
-		</div>
-	</div>
+		       </div>
+	        </div>
                     
                        
             <script src="js/popup.js"></script>

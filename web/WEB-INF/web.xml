@@ -8,6 +8,14 @@
         <servlet-name>Controlador</servlet-name>
         <servlet-class>Controlador.Controlador</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>ListarCuentas</servlet-name>
+        <servlet-class>Controlador.ListarCuentas</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ListarC</servlet-name>
+        <servlet-class>Controlador.ListarCuentas</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>Validar</servlet-name>
         <url-pattern>/Validar</url-pattern>
@@ -15,6 +23,14 @@
     <servlet-mapping>
         <servlet-name>Controlador</servlet-name>
         <url-pattern>/Controlador</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ListarCuentas</servlet-name>
+        <url-pattern>/ListarCuentas</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ListarC</servlet-name>
+        <url-pattern>/ListarC</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

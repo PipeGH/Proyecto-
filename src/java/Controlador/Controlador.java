@@ -1,6 +1,7 @@
 package Controlador;
 import Modelo.Cuenta;
 import Modelo.CuentaDAO;
+import Modelo.CuentaUsuarioDAO;
 import Modelo.Inmueble;
 import Modelo.InmuebleDAO;
 import Modelo.Invitado;
@@ -27,6 +28,7 @@ public class Controlador extends HttpServlet {
     InmuebleDAO inmdao=new InmuebleDAO();
     Cuenta cu= new Cuenta();
     CuentaDAO cuentdao= new CuentaDAO();
+    CuentaUsuarioDAO cuendao= new CuentaUsuarioDAO();
     Visita vis=new Visita();
     VisitaDAO visidao=new VisitaDAO();
     
@@ -54,6 +56,8 @@ public class Controlador extends HttpServlet {
          request.getRequestDispatcher("nuevo.jsp").forward(request, response);
          
         }
+        
+        
         if(menu.equals("ListarUsuarios")){
             
          switch (accion){
@@ -68,8 +72,8 @@ public class Controlador extends HttpServlet {
         
          request.getRequestDispatcher("ListaUsuarios.jsp").forward(request, response);
         }
-       
-         
+        
+      
         if(menu.equals("Usuarios")){
          
            switch (accion){
@@ -269,8 +273,9 @@ public class Controlador extends HttpServlet {
             
          switch (accion){
                case "Listar":
-                    List lista=cuentdao.listar();
-                    request.setAttribute("cuentas", lista);
+                   
+                    List listar=cuentdao.listar();
+                    request.setAttribute("cuentas", listar);
                    break;
                    
           default:
@@ -278,6 +283,22 @@ public class Controlador extends HttpServlet {
            }
         
          request.getRequestDispatcher("ListarCuentas.jsp").forward(request, response);
+        }
+       
+          if(menu.equals("ListarCuentasU")){
+            
+         switch (accion){
+               case "Listar":
+                   String nombre=request.getParameter("nombre");
+                    List listarU=cuendao.ListarCuentasU(nombre);
+                    request.setAttribute("ListarCuentasU", listarU);
+                   break;
+                   
+          default:
+                   throw new AssertionError();
+           }
+        
+         request.getRequestDispatcher("ListarCuentasU.jsp").forward(request, response);
         }
      if(menu.equals("Cuentas")){
            switch (accion){
@@ -358,12 +379,11 @@ public class Controlador extends HttpServlet {
                case "Agregar":
                     int id_visita=Integer.parseInt(request.getParameter("txtId_visita"));
                     int id_invitado=Integer.parseInt(request.getParameter("txtId_invitado"));
-                 
+                    String fecha = request.getParameter("txtFecha");
                     vis.setId_visita(id_visita);
                     vis.setId_invitado(id_invitado);
-                   
+                    vis.setFecha(fecha);
 
-                    
                     visidao.agregar(vis);
                     request.getRequestDispatcher("Controlador?menu=Visitas&accion=Listar").forward(request, response);
                    break;
@@ -377,9 +397,11 @@ public class Controlador extends HttpServlet {
                case "Actualizar":
                    int id_visita2=Integer.parseInt(request.getParameter("txtId_visita"));
                     int id_invitado2=Integer.parseInt(request.getParameter("txtId_invitado"));
-        
+                    String fecha2 = request.getParameter("txtFecha");
+                    
                     vis.setId_visita(id_visita2);
                     vis.setId_invitado(id_invitado2);
+                    vis.setFecha(fecha2);
                     vis.setId_visita(ide);
                     visidao.agregar(vis);
                     visidao.actualizar(vis);

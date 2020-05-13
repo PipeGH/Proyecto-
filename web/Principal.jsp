@@ -44,7 +44,7 @@
                             <img src="img/usuarios.png" style="width: 20px; height: 20px; margin-left: 2px;">
                         <ul>
                             <li>
-                            <a class="dropdown-item" href="Controlador?menu=ListarUsuarios&accion=Listar"target="myFrame">Listar Usuarios</a>
+                            <a class="dropdown-item"  href="Controlador?menu=ListarUsuarios&accion=Listar"target="myFrame">Listar Usuarios</a>
                             </li>
                             <li>
                             <a class="dropdown-item" href="Controlador?menu=Usuarios&accion=Listar"target="myFrame">Gestionar Usuarios</a>

@@ -659,4 +659,8 @@
 
     $.fn._reverse = [].reverse;
     
+    $("popup").draggable({
+      handle: ".modal-header"
+      });
+    
 })(jQuery);
