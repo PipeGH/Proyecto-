@@ -47,10 +47,7 @@
                         <label>Id_cuenta</label>
                         <input type="text" value="${inmueble.getId_cuenta()}"name="txtId_cuenta" class="form-control required">
                     </div>
-                    <div class="form-group">
-                        <label>Id_visita</label>
-                        <input type="text" value="${inmueble.getId_visita()}"name="txtId_visita" class="form-control required">
-                    </div>
+                   
                     <input type="submit" type="hidden" name="accion" value="Agregar" class="btn btn-info">
                     <input type="submit" name="accion" value="Actualizar" class="btn btn-success">
                     <input type="reset" name="accion" value="Cancelar" class="btn btn-info">
@@ -68,7 +65,6 @@
                         <th>Tipo</th>
                         <th>Id_usuario</th>
                         <th>Id_cuenta</th> 
-                        <th>id_visita</th>
                         <th>Accion</th> 
                     </tr>
                 </thead>
@@ -81,7 +77,7 @@
                          <td>${inmueb.getTipo()}</td>
                          <td>${inmueb.getId_usuario()}</td>
                          <td>${inmueb.getId_cuenta()}</td>
-                         <td>${inmueb.getId_visita()}</td>
+
                     <td>
                              <a class="btn btn-warning"href="Controlador?menu=Inmuebles&accion=Editar&id=${inmueb.getId()}">Editar</a>
                              <a class="btn btn-danger"href="Controlador?menu=Inmuebles&accion=Eliminar&id=${inmueb.getId()}">Eliminar</a> 

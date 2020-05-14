@@ -43,10 +43,18 @@
                         <input type="email" value="${usuario.getEmail()}"name="txtEmail" class="form-control" required>
                     </div>
                         <div class="form-group">
-                        <div><select name="txtNivel" class="form-control" onchange="this.form[txtNivel].value=this.value"><option value="0">Nivel de usuario</option><option value="1">Administrador</option><option value="2">Empleado</option><option value="3">Copropietario</option></select></div>
-                        <input type="text" value="${usuario.getNivel()}"name="txtNivel" class="form-control">
+                            
+                        <div>
+                            <select  name="txtNivel"  class="form-control">
+                              
+                                <option value="1">Administrador </option>
+                                <option value="2">Empleado</option>
+                                <option value="3">Copropietario</option>
+                            </select>
+                            <input type="email" value="${usuario.getNivel()}"name="txtEmail" class="form-control" required> 
                         </div>
-                
+                       </div>
+                  
                     <input type="submit" name="accion" value="Agregar" class="btn btn-primary">
                     <input type="submit" name="accion" value="Actualizar" class="btn btn-success">
                     <input style="margin-left: 5px;"type="reset" name="accion" value="Cancelar" class="btn btn-info">

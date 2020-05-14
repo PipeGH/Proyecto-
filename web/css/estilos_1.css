@@ -2,6 +2,7 @@
 	padding: 0;
 	margin: 0;
 	box-sizing:border-box;
+      
 }
 
 body {
@@ -14,7 +15,7 @@ body {
 	max-width: 1000px;
 	margin-left: 60px;
         margin-top: 20px;
-        position: relative;
+                
         
 }
 
@@ -33,6 +34,7 @@ body {
 	cursor: pointer;
 	transition: .3s ease all;
 	cursor: pointer;
+           
 }
 
 .contenedor .btn-abrir-popup:hover {
@@ -52,9 +54,12 @@ body {
 	left: 0;
 	right: 0;
 	align-items: center;
-	justify-content:center;
+	justify-content: center;
 	display: flex;
 	visibility: hidden;
+        margin-left: -50px;
+       margin-top: -50px;
+        
 }
 
 .overlay.active {
@@ -69,6 +74,7 @@ body {
 	padding: 20px;
 	text-align: center;
 	width: 600px;
+        
 	
 	transition: .3s ease all;
 	transform: scale(0.7);

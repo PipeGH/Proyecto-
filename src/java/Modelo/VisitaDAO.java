@@ -55,6 +55,7 @@ public class VisitaDAO {
                 vis.setId_visita(rs.getInt(1));
                 vis.setId_invitado(rs.getInt(2));
                 vis.setFecha(rs.getString(3));
+                vis.setId_inmueble(rs.getString(4));
                 
                 
                 
@@ -67,14 +68,14 @@ public class VisitaDAO {
             return lista;
         }
         public int agregar(Visita vis){
-            String sql="insert into visitas(id_visita,id_invitado,fecha)values(?,?,?)";
+            String sql="insert into visitas(id_visita,id_invitado,fecha,id_inmueble)values(?,?,?,?)";
             try{
             con=cn.Conexion();
             ps=con.prepareStatement(sql);
             ps.setInt(1, vis.getId_visita());
             ps.setInt(2, vis.getId_invitado());
             ps.setString(3, vis.getFecha());
-         
+            ps.setString(4, vis.getId_inmueble());
             
             ps.executeUpdate();
             }catch(Exception e){
@@ -91,12 +92,11 @@ public class VisitaDAO {
             while(rs.next()){
                 
             visi.setId_visita(rs.getInt(1));
-            visi.setId_visita(rs.getInt(2));
+            visi.setId_invitado(rs.getInt(2));
             visi.setFecha(rs.getString(3));
-            
-          
-            
-            }
+            visi.setId_inmueble(rs.getString(4));
+             
+           }
         }catch(Exception e){
             System.out.println(e.toString());
             
@@ -104,7 +104,7 @@ public class VisitaDAO {
         return visi;
         }
         public int actualizar(Visita vis){
-        String sql="update visitas set id_invitado=?, fecha=? where id_visita=?";
+        String sql="update visitas set id_invitado=?, fecha=?, id_inmueble=? where id_visita=?";
             try{
             con=cn.Conexion();
             ps=con.prepareStatement(sql);
@@ -112,7 +112,8 @@ public class VisitaDAO {
           
             ps.setInt(1, vis.getId_invitado());
             ps.setString(2,vis.getFecha());
-            ps.setInt(2, vis.getId_visita());
+            ps.setString(3,vis.getId_inmueble());
+            ps.setInt(4, vis.getId_visita());
             
             ps.executeUpdate();
             }catch(Exception e){

@@ -217,17 +217,13 @@ public class Controlador extends HttpServlet {
                     String tipo=request.getParameter("txtTipo");
                     int id_usuario=Integer.parseInt(request.getParameter("txtId_usuario"));
                     int id_cuenta=Integer.parseInt(request.getParameter("txtId_cuenta"));
-                    int id_visita=Integer.parseInt(request.getParameter("txtId_visita"));
 
-                    
                     inmueb.setId(id);
                     inmueb.setEstado(estado);
                     inmueb.setTipo(tipo);
                     inmueb.setId_usuario(id_usuario);
                     inmueb.setId_cuenta(id_cuenta);
-                    inmueb.setId_visita(id_visita);
                     
-
                     
                     inmdao.agregar(inmueb);
                     request.getRequestDispatcher("Controlador?menu=Inmuebles&accion=Listar").forward(request, response);
@@ -243,16 +239,14 @@ public class Controlador extends HttpServlet {
                    String id2=request.getParameter("txtId");
                    String estado2=request.getParameter("txtEstado");
                    String tipo2=request.getParameter("txtTipo");
-                     int  id_usuario2=Integer.parseInt(request.getParameter("txtId_usuario"));
-                     int  id_cuenta2=Integer.parseInt(request.getParameter("txtId_cuenta"));
-                     int  id_visita2=Integer.parseInt(request.getParameter("txtId_visita"));
+                    int  id_usuario2=Integer.parseInt(request.getParameter("txtId_usuario"));
+                    int  id_cuenta2=Integer.parseInt(request.getParameter("txtId_cuenta"));
                     
                     inmueb.setId(id2);
                     inmueb.setEstado(estado2);
                     inmueb.setTipo(tipo2);
                     inmueb.setId_usuario(id_usuario2);
                     inmueb.setId_cuenta(id_cuenta2);
-                    inmueb.setId_visita(id_visita2);
                     inmueb.setId(ide2);
                     inmdao.agregar(inmueb);
                     inmdao.actualizar(inmueb);
@@ -380,9 +374,11 @@ public class Controlador extends HttpServlet {
                     int id_visita=Integer.parseInt(request.getParameter("txtId_visita"));
                     int id_invitado=Integer.parseInt(request.getParameter("txtId_invitado"));
                     String fecha = request.getParameter("txtFecha");
+                    String id_inmueble = request.getParameter("txtId_inmueble");
                     vis.setId_visita(id_visita);
                     vis.setId_invitado(id_invitado);
                     vis.setFecha(fecha);
+                    vis.setId_inmueble(id_inmueble);
 
                     visidao.agregar(vis);
                     request.getRequestDispatcher("Controlador?menu=Visitas&accion=Listar").forward(request, response);
@@ -398,14 +394,16 @@ public class Controlador extends HttpServlet {
                    int id_visita2=Integer.parseInt(request.getParameter("txtId_visita"));
                     int id_invitado2=Integer.parseInt(request.getParameter("txtId_invitado"));
                     String fecha2 = request.getParameter("txtFecha");
+                    String id_inmueble2 = request.getParameter("txtId_inmueble");
                     
                     vis.setId_visita(id_visita2);
                     vis.setId_invitado(id_invitado2);
                     vis.setFecha(fecha2);
+                    vis.setId_inmueble(id_inmueble2);
                     vis.setId_visita(ide);
                     visidao.agregar(vis);
                     visidao.actualizar(vis);
-                    request.getRequestDispatcher("Controlador?menu=Visitas&accion=").forward(request, response);
+                    request.getRequestDispatcher("Controlador?menu=Visitas&accion=Listar").forward(request, response);
                    
                    break;
                case "Eliminar":

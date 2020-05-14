@@ -1,20 +1,21 @@
 
 package Modelo;
 
-import java.util.Date;
 
 public class Visita {
     int id_visita,id_invitado;
-    String fecha;
+    String fecha,id_inmueble;
+    
   
 public Visita(){
 }    
 
-public Visita(int id_visita, int id_invitado, String fecha){
+public Visita(int id_visita, int id_invitado, String fecha, String id_inmueble){
 
  this.id_visita=id_visita;
  this.id_invitado=id_invitado;
  this.fecha=fecha;
+ this.id_inmueble=id_inmueble;
   }
 
     public int getId_visita() {
@@ -39,6 +40,14 @@ public Visita(int id_visita, int id_invitado, String fecha){
 
     public void setFecha(String fecha) {
         this.fecha = fecha;
+    }
+
+    public String getId_inmueble() {
+        return id_inmueble;
+    }
+
+    public void setId_inmueble(String id_inmueble) {
+        this.id_inmueble = id_inmueble;
     }
 
 

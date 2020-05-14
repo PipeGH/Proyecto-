@@ -1,6 +1,5 @@
 package Modelo;
 
-
 public class Cuenta {
  
     int id_cuenta=0; 

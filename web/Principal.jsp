@@ -93,10 +93,9 @@
                         </a>
                     </li>
    
-                    <li>Sesion de
+                    <li><label>Sesión de</label>
                       <%
-                    out.print(session.getAttribute("user"));
-                                              
+                        out.print(session.getAttribute("user"));                       
                       %>
                         <ul>
                           <li>
@@ -116,7 +115,7 @@
                 </li>
                
              </ul>
-                          
+               z           
             </nav>    
         </header>
             <div class="mt-4" style="height: 570px;">

@@ -33,9 +33,7 @@
                                 
                                 <a class="dropdown-item" href="Controlador?menu=ListarCuentasU&nombre=<% out.print(session.getAttribute("user"));%>&accion=Listar" target="myFrame">Listar Cuentas</a>
                             </li>
-                            <li>
-                                <a class="dropdown-item" href="Controlador?menu=Cuentas&accion=Listar"target="myFrame">Gestionar Perfil</a>
-                            </li>
+                            
                         </ul>
                     </li>
                     <li>

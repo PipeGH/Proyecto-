@@ -14,7 +14,7 @@
     </head>
     <body>
         <div class="d-flex">
-              <div style="margin-left: 40px; box-shadow: 1px 1px 10px 0px black;" class="card" col-sm-8>
+         <div style="margin-left: 40px; box-shadow: 1px 1px 10px 0px black;" class="card" col-sm-8>
             <div class="card-body">
                 <form action="Controlador?menu=Invitados" method="POST">
                      <div class="form-group text-center">
@@ -40,7 +40,8 @@
                     
                  </form>
             </div> 
-        </div>
+        </div>           
+        
         <div class="col-sm-6">
             <table  style="margin-left: 100px;  border: #3ce477 5px solid;" class="table table-hover ">
                 <thead>
@@ -63,7 +64,7 @@
                              <a class="btn btn-warning"href="Controlador?menu=Invitados&accion=Editar&id=${in.getId()}">Editar Datos</a>
                              <a class="btn btn-danger" style="margin-left: 10px"href="Controlador?menu=Invitados&accion=Eliminar&id=${in.getId()}">Eliminar Datos</a>
                          </td>
-                       </tr>
+               </tr>
             </c:forEach>        
            </tbody>
         </table>
