@@ -10,12 +10,16 @@
 	<link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,600|Open+Sans" rel="stylesheet"> 
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
 	<link rel="stylesheet" href="css/estilos_1.css">
+        
+        <script src="js/Eliminar.js" type="text/javascript"></script>
+        
         <title>Registro de Cuentas</title>
     </head>
     <body>
         <div class="d-flex">
-              <div style="margin-left: 40px; box-shadow: 1px 1px 10px 0px black;" class="card" col-sm-8>
-            <div class="card-body">
+               <div style="border: none;" class="card" col-sm-8>
+            <div style= "width: 350px; margin-left: 30px; margin-top: 20px; box-shadow: 1px 1px 10px 0px black;" class="card-body">
+               
                 <form action="Controlador?menu=Cuentas" method="POST">
                      <div class="form-group text-center">
                             <h3>Registro de Cuentas</h3>
@@ -43,7 +47,7 @@
                     </div>
                     
                     
-                    <input type="submit" name="accion" value="Agregar" class="btn btn-info">
+                    <input type="submit" name="accion" value="Agregar" class="btn btn-primary">
                     <input type="submit" name="accion" value="Actualizar" class="btn btn-success">
                     <input type="reset" name="accion" value="Cancelar" class="btn btn-info">
                     
@@ -75,9 +79,12 @@
                          
                          <td>
                              <a class="btn btn-warning"href="Controlador?menu=Cuentas&accion=Editar&id_cuenta=${cu.getId_cuenta()}">Editar</a>
-                             <a class="btn btn-danger" style="margin-left: 10px"href="Controlador?menu=Cuentas&accion=Eliminar&id_cuenta=${cu.getId_cuenta()}">Eliminar</a>
+                             <a class="btn btn-danger" onclick="Eliminar()"style="margin-left: 10px"href="Controlador?menu=Cuentas&accion=Eliminar&id_cuenta=${cu.getId_cuenta()}">Eliminar</a>
                          </td>
+                     
+                            
                        </tr>
+                        
             </c:forEach>        
            </tbody>
         </table>

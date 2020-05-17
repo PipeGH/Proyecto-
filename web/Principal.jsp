@@ -188,11 +188,11 @@
         <div class="container-footer">
                <div class="footer">
                     <div class="copyright">
-                        © 2020 Todos los Derechos Reservados |<WFG.DEVELOPER</a>
+                        © 2020 Todos los Derechos Reservados | WFG.DEVELOPER</a>
                     </div>
                    
                     <div class="information">
-                        <a href="Politica de Privacidad.jsp" target="myFrame">Privacion y Politica</a> | <a href="">Terminos y Condiciones</a>
+                        <a href="Politica de Privacidad.jsp" target="myFrame">Privacion y Politica</a>
                     </div>
                 </div>
 

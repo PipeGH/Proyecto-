@@ -12,7 +12,8 @@
 	<link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,600|Open+Sans" rel="stylesheet"> 
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
 	<link rel="stylesheet" href="css/estilos_1.css">
-       
+        <script src="js/Eliminar.js" type="text/javascript"></script>
+        
         <title>Gestionar Inmuebles</title>
     </head>
     <body>
@@ -48,7 +49,7 @@
                         <input type="text" value="${inmueble.getId_cuenta()}"name="txtId_cuenta" class="form-control required">
                     </div>
                    
-                    <input type="submit" type="hidden" name="accion" value="Agregar" class="btn btn-info">
+                    <input type="submit" type="hidden" name="accion" value="Agregar" class="btn btn-primary">
                     <input type="submit" name="accion" value="Actualizar" class="btn btn-success">
                     <input type="reset" name="accion" value="Cancelar" class="btn btn-info">
                     
@@ -80,7 +81,7 @@
 
                     <td>
                              <a class="btn btn-warning"href="Controlador?menu=Inmuebles&accion=Editar&id=${inmueb.getId()}">Editar</a>
-                             <a class="btn btn-danger"href="Controlador?menu=Inmuebles&accion=Eliminar&id=${inmueb.getId()}">Eliminar</a> 
+                             <a class="btn btn-danger"onclick="Eliminar()"href="Controlador?menu=Inmuebles&accion=Eliminar&id=${inmueb.getId()}">Eliminar</a> 
                              
                 </td>     
                 </tr>   

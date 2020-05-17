@@ -10,7 +10,10 @@
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,600|Open+Sans" rel="stylesheet"> 
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
-	<link rel="stylesheet" href="css/estilos_1.css"><title>Lista de Visitas</title>
+	<link rel="stylesheet" href="css/estilos_1.css">
+        <script src="js/Eliminar.js" type="text/javascript"></script>
+        
+        <title>Lista de Visitas</title>
     </head>
     <body>
           <div class="d-flex">
@@ -68,7 +71,7 @@
                          
                          <td>
                              <a class="btn btn-warning"href="Controlador?menu=Visitas&accion=Editar&id_visita=${vis.getId_visita()}">Editar Datos</a>
-                             <a class="btn btn-danger" style="margin-left: 10px"href="Controlador?menu=Visitas&accion=Eliminar&id_visita=${vis.getId_visita()}">Eliminar Datos</a>
+                             <a class="btn btn-danger" onclick="Eliminar()"style="margin-left: 10px"href="Controlador?menu=Visitas&accion=Eliminar&id_visita=${vis.getId_visita()}">Eliminar Datos</a>
                          </td>
                </tr>
             </c:forEach>        
