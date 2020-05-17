@@ -52,7 +52,7 @@
                         </ul>
                     </li>
                     <li>Invitados
-                            <img src="img/usuarios.png" style="width: 20px; height: 20px; margin-left: 2px;">
+                            <img src="img/avatar.png" style="width: 20px; height: 20px; margin-left: 2px;">
                         <ul>
                             <li>
                             <a class="dropdown-item" href="Controlador?menu=ListarInvitados&accion=Listar"target="myFrame">Listar Invitados</a>
@@ -63,7 +63,7 @@
                         </ul>
                     </li>
                     <li>Visitas
-                            <img src="img/usuarios.png" style="width: 20px; height: 20px; margin-left: 2px;">
+                            <img src="img/usersesion.png" style="width: 20px; height: 20px; margin-left: 2px;">
                         <ul>
                             <li>
                             <a class="dropdown-item" href="Controlador?menu=ListarVisitas&accion=Listar"target="myFrame">Listar Visitas</a>
@@ -72,11 +72,11 @@
                     </li>
                     <li>
                         <a  style="margin-top:-4px;"class="dropdown-item"href="Controlador?menu=Inmuebles&accion=Listar" target="myFrame">Inmuebles
-                            <img style="width: 20px; height: 20px; margin-left: 2px;" src="img/home3.png">
+                            <img style="width: 20px; height: 20px; margin-left: 2px;" src="img/home.png">
                         </a> 
                     </li>
                     <li>Cuentas
-                            <img src="img/profile_1.png" style="width: 20px; height: 20px; margin-left: 2px;">
+                            <img src="img/file-text.png" style="width: 20px; height: 20px; margin-left: 2px;">
                         <ul>
                             <li>
                             <a class="dropdown-item" href="Controlador?menu=ListarCuentas&accion=Listar"target="myFrame">Listar Cuentas</a>
@@ -94,15 +94,18 @@
                     </li>
    
                     <li><label>Sesión de</label>
+                        
                       <%
-                        out.print(session.getAttribute("user"));                       
+                        out.print(session.getAttribute("user")); 
                       %>
+                      <img style="width: 20px; height: 20px; margin-left: 1px;"src="img/usersesion.png"> 
                         <ul>
                           <li>
                               
                               <img  src="img/user.png" alt="60" width="60">
+                              <li>${usuario.getEmail()}</li>
                           </li>
-                          <li>${usuario.getEmail()}</li>
+                          
                           <form action="Validar" method="POST">  
                           
                            <li>
@@ -185,11 +188,11 @@
         <div class="container-footer">
                <div class="footer">
                     <div class="copyright">
-                        © 2020 Todos los Derechos Reservados | <a href="">WFG.DEVELOPER</a>
+                        © 2020 Todos los Derechos Reservados |<WFG.DEVELOPER</a>
                     </div>
                    
                     <div class="information">
-                        <a href="">Informacion Equipo de desarrollo</a> | <a href="">Privacion y Politica</a> | <a href="">Terminos y Condiciones</a>
+                        <a href="Politica de Privacidad.jsp" target="myFrame">Privacion y Politica</a> | <a href="">Terminos y Condiciones</a>
                     </div>
                 </div>
 

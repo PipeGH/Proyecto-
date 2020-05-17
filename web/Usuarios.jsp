@@ -45,13 +45,15 @@
                         <div class="form-group">
                             
                         <div>
-                            <select  name="txtNivel"  class="form-control">
-                              
-                                <option value="1">Administrador </option>
-                                <option value="2">Empleado</option>
-                                <option value="3">Copropietario</option>
-                            </select>
-                            <input type="email" value="${usuario.getNivel()}"name="txtEmail" class="form-control" required> 
+                          
+                            <Label>Tipo de usuario: </Label>
+                            <Label>1. Administrador</label>
+                         <div>    
+                            <label>2. Empleado</label>
+                            <label>3.Copropietario</Label>
+                         </div>
+                         <input type="number"  min="1" max="3" value="${usuario.getNivel()}"name="txtNivel" title="1 Administrador 2. Empleado 3.Copropietario" class="form-control"> 
+
                         </div>
                        </div>
                   
