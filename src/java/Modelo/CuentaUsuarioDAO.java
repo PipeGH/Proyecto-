@@ -31,6 +31,7 @@ public class CuentaUsuarioDAO {
           cuent.setMonto(rs.getString("monto"));
            cuent.setDescripcion(rs.getString("descripcion"));
            cuent.setNombre(rs.getString("nombre"));
+           cuent.setFecha(rs.getString("fecha"));
         
        }             
        
@@ -57,6 +58,7 @@ public class CuentaUsuarioDAO {
                 cuent.setMonto(rs.getString(2));
                 cuent.setDescripcion(rs.getString(3));
                 cuent.setNombre(rs.getString(4));
+                cuent.setFecha(rs.getString(5));
               
                        lista.add(cuent);
                        

@@ -4,17 +4,18 @@ public class Cuenta {
  
     int id_cuenta=0; 
     String descripcion, monto;
-    String nombre;
+    String nombre,fecha;
     
  public Cuenta(){
  }
  
-  public Cuenta( int id_cuenta, String monto,  String descripcion, String nombre) {
+  public Cuenta( int id_cuenta, String monto,  String descripcion, String nombre, String fecha) {
   
      this.id_cuenta=id_cuenta;
      this.monto=monto;
      this.descripcion=descripcion;
      this.nombre=nombre;
+     this.fecha=fecha;
   } 
 
     public int getId_cuenta() {
@@ -47,6 +48,14 @@ public class Cuenta {
 
     public void setNombre(String nombre) {
         this.nombre = nombre;
+    }
+
+    public String getFecha() {
+        return fecha;
+    }
+
+    public void setFecha(String fecha) {
+        this.fecha = fecha;
     }
   
   

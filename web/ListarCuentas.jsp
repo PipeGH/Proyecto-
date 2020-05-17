@@ -22,6 +22,7 @@
                         <th>Monto</th>
                         <th>Descripcion</th>
                         <th>Nombre usuario</th>
+                        <th>Fecha de vencimiento</th>
                     </tr>
                 </thead>
            <tbody>
@@ -31,6 +32,7 @@
                          <td>${cu.getMonto()}</td>
                          <td>${cu.getDescripcion()}</td>
                          <td>${cu.getNombre()}</td>
+                         <td>${cu.getFecha()}</td>
 
                        </tr>
             </c:forEach>        

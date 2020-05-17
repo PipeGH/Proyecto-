@@ -6,7 +6,6 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
-import Modelo.CuentaUsuario;
 
 public class CuentaDAO {
    
@@ -29,8 +28,9 @@ public class CuentaDAO {
            
           cu.setId_cuenta(rs.getInt("id_cuenta"));
           cu.setMonto(rs.getString("monto"));
-           cu.setDescripcion(rs.getString("descripcion"));
-         
+          cu.setDescripcion(rs.getString("descripcion"));
+          cu.setNombre(rs.getString("nombre"));
+          cu.setFecha(rs.getString("fecha"));
           
        }             
        
@@ -56,6 +56,7 @@ public class CuentaDAO {
                 cu.setMonto(rs.getString(2));
                 cu.setDescripcion(rs.getString(3));
                 cu.setNombre(rs.getString(4));
+                cu.setFecha(rs.getString(5));
                 
                 
                        lista.add(cu);
@@ -67,7 +68,7 @@ public class CuentaDAO {
             return lista;
         }
         public int agregar(Cuenta cu){
-            String sql="insert into cuentas(id_cuenta,monto,descripcion,nombre)values(?,?,?,?)";
+            String sql="insert into cuentas(id_cuenta,monto,descripcion,nombre,fecha)values(?,?,?,?,?)";
             try{
             con=cn.Conexion();
             ps=con.prepareStatement(sql);
@@ -75,6 +76,8 @@ public class CuentaDAO {
             ps.setString(2, cu.getMonto());
             ps.setString(3, cu.getDescripcion());
             ps.setString(4, cu.getNombre());
+            ps.setString(5, cu.getFecha());
+           
             
             ps.executeUpdate();
             }catch(Exception e){
@@ -94,6 +97,8 @@ public class CuentaDAO {
             cuen.setMonto(rs.getString(2));
             cuen.setDescripcion(rs.getString(3));
             cuen.setNombre(rs.getString(4));
+            cuen.setFecha(rs.getString(5));
+            
           
             
             }
@@ -104,7 +109,7 @@ public class CuentaDAO {
         return cuen;
         }
         public int actualizar(Cuenta cu){
-        String sql="update cuentas set monto=?, descripcion=?, nombre=? where id_cuenta=?";
+        String sql="update cuentas set monto=?, descripcion=?, nombre=?, fecha=? where id_cuenta=?";
             try{
             con=cn.Conexion();
             ps=con.prepareStatement(sql);
@@ -112,7 +117,9 @@ public class CuentaDAO {
             ps.setString(1, cu.getMonto());
             ps.setString(2, cu.getDescripcion());
             ps.setString(3, cu.getNombre());
-            ps.setInt(4, cu.getId_cuenta());
+            ps.setString(4, cu.getFecha());
+            ps.setInt(5, cu.getId_cuenta());
+    
             
             ps.executeUpdate();
             }catch(Exception e){

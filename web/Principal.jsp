@@ -115,7 +115,7 @@
                 </li>
                
              </ul>
-               z           
+                       
             </nav>    
         </header>
             <div class="mt-4" style="height: 570px;">
@@ -187,7 +187,7 @@
                     <div class="copyright">
                         © 2020 Todos los Derechos Reservados | <a href="">WFG.DEVELOPER</a>
                     </div>
-
+                   
                     <div class="information">
                         <a href="">Informacion Equipo de desarrollo</a> | <a href="">Privacion y Politica</a> | <a href="">Terminos y Condiciones</a>
                     </div>

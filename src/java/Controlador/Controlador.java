@@ -305,11 +305,14 @@ public class Controlador extends HttpServlet {
                     String monto=request.getParameter("txtMonto");
                     String descripcion=request.getParameter("txtDescripcion");
                     String nombre=request.getParameter("txtNombre");
+                    String fecha = request.getParameter("txtFecha");
 
                     cu.setId_cuenta(id_cuenta);
                     cu.setMonto(monto);
                     cu.setDescripcion(descripcion);
                     cu.setNombre(nombre);
+                    cu.setFecha(fecha);
+                    
                     
                     cuentdao.agregar(cu);
                     request.getRequestDispatcher("Controlador?menu=Cuentas&accion=Listar").forward(request, response);
@@ -326,11 +329,13 @@ public class Controlador extends HttpServlet {
                    String monto2= request.getParameter("txtMonto");
                    String descripcion2=request.getParameter("txtDescripcion");
                    String nombre2=request.getParameter("txtNombre");
+                   String fecha2=request.getParameter("txtFecha");
                     
                     cu.setId_cuenta(id_cuenta2);
                     cu.setMonto(monto2);
                     cu.setDescripcion(descripcion2);
                     cu.setNombre(nombre2);
+                    cu.setFecha(fecha2);
                     cu.setId_cuenta(ide);
                     cuentdao.agregar(cu);
                     cuentdao.actualizar(cu);

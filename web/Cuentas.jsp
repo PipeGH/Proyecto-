@@ -37,16 +37,21 @@
                         <label>Nombre Usuario</label>
                         <input type="text"  value="${cuenta.getNombre()}"name="txtNombre" class="form-control"required>
                     </div>
+                    <div class="form-group">
+                        <label>Fecha</label>
+                        <input type="date"  value="${cuenta.getFecha()}"name="txtFecha" class="form-control"required>
+                    </div>
                     
                     
                     <input type="submit" name="accion" value="Agregar" class="btn btn-info">
                     <input type="submit" name="accion" value="Actualizar" class="btn btn-success">
                     <input type="reset" name="accion" value="Cancelar" class="btn btn-info">
                     
+                    
                  </form>
             </div> 
         </div>
-        <div class="col-sm-8">
+        <div class="col-sm-9">
             <table  style="margin-left: 100px;  border: #3ce477 5px solid;" class="table table-hover ">
                 <thead>
                     <tr>
@@ -54,6 +59,7 @@
                         <th>Monto</th>
                         <th>Descripcion</th>
                         <th>Nombre usuario</th>
+                        <th>Fecha de vencimiento</th>
                         <th>Accion</th> 
                     </tr>
                 </thead>
@@ -64,11 +70,12 @@
                          <td>${cu.getMonto()}</td>
                          <td>${cu.getDescripcion()}</td>
                          <td>${cu.getNombre()}</td>
+                         <td>${cu.getFecha()}</td>
 
                          
                          <td>
-                             <a class="btn btn-warning"href="Controlador?menu=Cuentas&accion=Editar&id_cuenta=${cu.getId_cuenta()}">Editar Datos</a>
-                             <a class="btn btn-danger" style="margin-left: 10px"href="Controlador?menu=Cuentas&accion=Eliminar&id_cuenta=${cu.getId_cuenta()}">Eliminar Datos</a>
+                             <a class="btn btn-warning"href="Controlador?menu=Cuentas&accion=Editar&id_cuenta=${cu.getId_cuenta()}">Editar</a>
+                             <a class="btn btn-danger" style="margin-left: 10px"href="Controlador?menu=Cuentas&accion=Eliminar&id_cuenta=${cu.getId_cuenta()}">Eliminar</a>
                          </td>
                        </tr>
             </c:forEach>        
