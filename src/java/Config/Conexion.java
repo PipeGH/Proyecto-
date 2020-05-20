@@ -6,9 +6,9 @@ import java.sql.DriverManager;
 
 public class Conexion {
    Connection con;
-   String url="jdbc:postgresql://localhost:5432/Conjunto1";
-   String user="postgres";
-   String pass="felipe1";
+   String url="jdbc:postgresql://node48061-setware1.jelastic.saveincloud.net:5432/Conjunto";
+   String user="webadmin";
+   String pass="ETZxdg55386";
  public Connection Conexion(){
      try{
          Class.forName("org.postgresql.Driver");

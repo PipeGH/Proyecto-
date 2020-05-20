@@ -27,7 +27,7 @@
                         </a> 
                     </li>
                     <li>Cuentas 
-                            <img src="img/profile_1.png" style="width: 20px; height: 20px; margin-left: 2px;">
+                            <img src="img/file-text.png" style="width: 20px; height: 20px; margin-left: 2px;">
                         <ul>
                             <li>
                                 
@@ -49,10 +49,10 @@
                     out.print(session.getAttribute("user"));
                                               
                          %>
-                        
+                            <img style="width: 20px; height: 20px; margin-left: 1px;"src="img/usersesion.png"> 
                         <ul>
                           <li>
-                              <img  src="img/user.png" alt="60" width="60">
+                              <img  src="img/usersesion.png" alt="60" width="60">
                           </li>
                           <li>${usuario.getEmail()}</li>
                           <form action="Validar" method="POST">  
@@ -137,11 +137,11 @@
         <div class="container-footer">
                <div class="footer">
                     <div class="copyright">
-                        © 2020 Todos los Derechos Reservados | <a href="">WFG.DEVELOPER</a>
+                        © 2020 Todos los Derechos Reservados | WFG.DEVELOPER</a>
                     </div>
 
                     <div class="information">
-                        <a href="">Informacion Equipo de desarrollo</a> | <a href="">Privacion y Politica</a> | <a href="">Terminos y Condiciones</a>
+                         <a href="Politica de Privacidad.jsp" target="myFrame">Politica de Privacidad</a>
                     </div>
                 </div>
 

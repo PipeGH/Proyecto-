@@ -3,8 +3,7 @@
 <!DOCTYPE html>
 <html lang="en">
   
-   
-     
+
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
         <link rel="stylesheet" href="css/estilosm.css">
@@ -27,7 +26,7 @@
                         </a> 
                     </li>
                     <li>Invitados
-                            <img src="img/usuarios.png" style="width: 20px; height: 20px; margin-left: 2px;">
+                            <img src="img/avatar.png" style="width: 20px; height: 20px; margin-left: 2px;">
                         <ul>
                             <li>
                             <a class="dropdown-item" href="Controlador?menu=ListarInvitados&accion=Listar"target="myFrame">Listar Invitados</a>
@@ -38,7 +37,7 @@
                         </ul>
                     </li>
                     <li>
-                        <a style="margin-top:-4px" class="dropdown-item"href="Controlador?menu=Inicio" target="myFrame">Acerca de
+                        <a style="margin-top:-4px" class="dropdown-item"href="Acerca de.jsp" target="myFrame">Acerca de
                             <img style="width: 20px; height: 20px; margin-left: 2px;"src="img/info.png"> 
                         </a>
                     </li>
@@ -50,10 +49,10 @@
                     out.print(session.getAttribute("user"));
                                               
                          %>
-                        
+                             <img style="width: 20px; height: 20px; margin-left: 1px;"src="img/usersesion.png"> 
                         <ul>
                           <li>
-                              <img  src="img/user.png" alt="60" width="60">
+                              <img  src="img/usersesion.png" alt="60" width="60">
                           </li>
                           <li>${usuario.getEmail()}</li>
                           <form action="Validar" method="POST">  
@@ -138,11 +137,11 @@
         <div class="container-footer">
                <div class="footer">
                     <div class="copyright">
-                        © 2020 Todos los Derechos Reservados | <a href="">WFG.DEVELOPER</a>
+                        © 2020 Todos los Derechos Reservados | WFG.DEVELOPER</a>
                     </div>
 
                     <div class="information">
-                        <a href="">Informacion Equipo de desarrollo</a> | <a href="">Privacion y Politica</a> | <a href="">Terminos y Condiciones</a>
+                       <a href="Politica de Privacidad.jsp" target="myFrame">Politica de Privacidad</a>
                     </div>
                 </div>
 

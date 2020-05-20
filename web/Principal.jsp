@@ -102,7 +102,7 @@
                         <ul>
                           <li>
                               
-                              <img  src="img/user.png" alt="60" width="60">
+                              <img  src="img/usersesion.png" alt="60" width="60">
                               <li>${usuario.getEmail()}</li>
                           </li>
                           
