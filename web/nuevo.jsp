@@ -30,7 +30,7 @@
 		    <h1>Sean Bienvenidos a SETWARE</h1>
 		</div>
 		<div id="htmlcaption2" class="nivo-html-caption">     
-		    <h1>Para mas informacion de click en el boton Acerca de</h1>
+		    <h1>Para mas informacion da click en el boton Acerca de</h1>
 		</div>
 		<div id="htmlcaption3" class="nivo-html-caption">     
 		    <h1>Gracias por visitar</h1>

@@ -2,8 +2,7 @@
 <%@page session="true"%>
 <!DOCTYPE html>
 <html>
-   <script type="text/javascript">
-    history.forward();
+
    </script>
    
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -30,6 +29,7 @@
      
    </head>
     <body>
+     
         <header>
             <nav class="menu">
                 <ul>         
@@ -66,16 +66,32 @@
                             <img style="width: 20px; height: 20px; margin-left: 2px;" src="img/home3.png">
                         </a> 
                     </li>
+                    <li>Cuentas
+                            <img src="img/profile_1.png" style="width: 20px; height: 20px; margin-left: 2px;">
+                        <ul>
+                            <li>
+                            <a class="dropdown-item" href="Controlador?menu=ListarCuentas&accion=Listar"target="myFrame">Listar Cuentas</a>
+                            </li>
+                            <li>
+                            <a class="dropdown-item" href="Controlador?menu=Cuentas&accion=Listar"target="myFrame">Gestionar Cuentas</a>
+                            </li>
+                        </ul>
+                    </li>
      
                     <li>
-                        <a style="margin-top:-4px; margin-left:-15px;" class="dropdown-item"href="Acerca de.jsp" target="myFrame">Acerca de
+                        <a style="margin-top:-4px; " class="dropdown-item"href="Acerca de.jsp" target="myFrame">Acerca de
                              <img style="width: 20px; height: 20px; margin-left: 1px;"src="img/info.png"> 
                         </a>
                     </li>
    
-                    <li>Sesion de ${usuario.getNombre()}
+                    <li>Sesion de
+                      <%
+                    out.print(session.getAttribute("user"));
+                                              
+                      %>
                         <ul>
                           <li>
+                              
                               <img  src="img/user.png" alt="60" width="60">
                           </li>
                           <li>${usuario.getEmail()}</li>

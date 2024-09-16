@@ -43,10 +43,8 @@
                         <input type="email" value="${usuario.getEmail()}"name="txtEmail" class="form-control" required>
                     </div>
                         <div class="form-group">
-                        <label>Nivel</label>
-                        <input type="text" value="${usuario.getNivel()}"name="txtNivel" class="form-control" required>
-                    
-                        
+                        <div><select name="txtNivel" class="form-control" onchange="this.form[txtNivel].value=this.value"><option value="0">Nivel de usuario</option><option value="1">Administrador</option><option value="2">Empleado</option><option value="3">Copropietario</option></select></div>
+                        <input type="text" value="${usuario.getNivel()}"name="txtNivel" class="form-control">
                         </div>
                 
                     <input type="submit" name="accion" value="Agregar" class="btn btn-primary">
@@ -79,7 +77,7 @@
                          <td>${us.getApellido()}</td>
                          <td>${us.getTelefono()}</td>
                          <td>${us.getEmail()}</td>
-                         <td>${us.getNivel()}</td>
+                         <td>${us.getNivel()}</td>            
                          
                 <td>
                              <a class="btn btn-warning"href="Controlador?menu=Usuarios&accion=Editar&id=${us.getId()}">Editar</a>

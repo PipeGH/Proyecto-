@@ -26,19 +26,22 @@
                             <img style="width: 20px; height: 20px; margin-left: 2px;" src="img/home3.png">
                         </a> 
                     </li>
-                    <li>Invitados
-                            <img src="img/usuarios.png" style="width: 20px; height: 20px; margin-left: 2px;">
+                    <li>Cuentas 
+                            <img src="img/profile_1.png" style="width: 20px; height: 20px; margin-left: 2px;">
                         <ul>
                             <li>
-                            <a class="dropdown-item" href="Controlador?menu=ListarInvitados&accion=Listar"target="myFrame">Listar Invitados</a>
+                                
+                            <a class="dropdown-item" href="Controlador?menu=ListarCuentasU&nombre=<%
+                                out.print(session.getAttribute("user"));
+                               %>&accion=ListarCuentas"target="myFrame">Listar Cuentas</a>
                             </li>
                             <li>
-                            <a class="dropdown-item" href="Controlador?menu=Invitados&accion=Listar"target="myFrame">Gestionar Invitados</a>
+                            <a class="dropdown-item" href="Controlador?menu=Cuentas&accion=Listar"target="myFrame">Gestionar Perfil</a>
                             </li>
                         </ul>
                     </li>
                     <li>
-                        <a style="margin-top:-4px" class="dropdown-item"href="Controlador?menu=Inicio" target="myFrame">Acerca de
+                        <a style="margin-top:-4px" class="dropdown-item"href="Acerca de.jsp" target="myFrame">Acerca de
                             <img style="width: 20px; height: 20px; margin-left: 2px;"src="img/info.png"> 
                         </a>
                     </li>
